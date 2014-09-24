@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Export-Package: com.siliconarabia.okarabiacomments.dto;version="1.0.0"
+ ;uses:="com.pearlox.framework.converter,com.pearlox.framework.dto,jav
+ ax.xml.bind.annotation",com.siliconarabia.okarabiacomments.utils;vers
+ ion="1.0.0"
+Bundle-Version: 1.0.0
+Tool: Bundlor 1.0.0.RELEASE
+Import-Package: com.pearlox.framework.converter,com.pearlox.framework.
+ dto,javax.xml.bind.annotation
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.dto
+

@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Fragment-Host: com.siliconarabia.okarabiacomments-web
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.web.index.fragment
+Bundle-Name: index-fragment
+Bundle-Description: index pages fragment for the okarabiacomments

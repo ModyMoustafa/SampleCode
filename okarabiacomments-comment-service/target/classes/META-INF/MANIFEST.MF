@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Require-Bundle: com.siliconarabia.okarabiacomments.domain;bundle-versi
+ on="1.0.0",com.springsource.javax.mail,com.siliconarabia.okarabiacomm
+ ents.dao,com.siliconarabia.okarabiacomments.dao-impl,com.pearlox.fram
+ ework;bundle-version="0.0.1"
+Export-Package: com.siliconarabia.okarabiacomments.comment.service;ver
+ sion="1.0.0",com.siliconarabia.okarabiacomments.comment.service.api;v
+ ersion="1.0.0";uses:="com.siliconarabia.okarabiacomments.domain",com.
+ siliconarabia.okarabiacomments.comment.service.impl;version="1.0.0";u
+ ses:="com.siliconarabia.okarabiacomments.comment.service.api,com.sili
+ conarabia.okarabiacomments.domain,org.springframework.beans.factory.a
+ nnotation,org.springframework.stereotype"
+DynamicImport-Package: *
+Bundle-Version: 1.0.0
+Tool: Bundlor 1.0.0.RELEASE
+Import-Package: com.pearlox.framework.domain,com.pearlox.framework.set
+ tings,javax.persistence,org.slf4j,org.springframework.beans.factory.a
+ nnotation,org.springframework.stereotype,org.springframework.transact
+ ion
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.comment.servic
+ e
+

@@ -1,0 +1,4 @@
+Bundle-ManifestVersion: 2
+Bundle-Name: Varaza Extender
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.extender
+Fragment-Host: com.pearlox.varaza

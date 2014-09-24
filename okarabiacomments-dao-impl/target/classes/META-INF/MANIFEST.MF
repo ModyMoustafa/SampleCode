@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Export-Package: com.siliconarabia.okarabiacomments.dao.impl;version="1
+ .0.0";uses:="com.pearlox.framework.dao.impl,com.siliconarabia.okarabi
+ acomments.dao,com.siliconarabia.okarabiacomments.domain,org.springfra
+ mework.stereotype,org.springframework.transaction.annotation"
+DynamicImport-Package: *
+Bundle-Version: 1.0.0
+Tool: Bundlor 1.0.0.RELEASE
+Import-Package: com.pearlox.framework.dao.impl,com.pearlox.framework.d
+ omain,com.pearlox.framework.settings,com.siliconarabia.okarabiacommen
+ ts.dao,com.siliconarabia.okarabiacomments.domain,javax.persistence,or
+ g.slf4j,org.springframework.stereotype,org.springframework.transactio
+ n,org.springframework.transaction.annotation
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.dao-impl
+

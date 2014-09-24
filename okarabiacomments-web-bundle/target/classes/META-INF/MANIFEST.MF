@@ -1,0 +1,21 @@
+Manifest-Version: 1.0
+Export-Package: com.siliconarabia.okarabiacomments.web.security;versio
+ n="1.0.0";uses:="com.siliconarabia.okarabiacomments.dto,org.springfra
+ mework.security.authentication,org.springframework.security.core"
+Import-Bundle: com.springsource.javax.validation;version="[1.0.0.GA,1.
+ 0.0.GA]",com.springsource.com.sun.xml.bind;version="[2.1.7,2.1.7]",co
+ m.springsource.org.hibernate.validator;version="[4.0.0.GA,4.0.0.GA]",
+ com.springsource.org.apache.commons.fileupload;version="[1.2.1,1.2.1]
+ ",com.springsource.org.directwebremoting;version="[2.0.4,2.0.4]"
+Require-Bundle: org.springframework.security.core,com.springsource.org
+ .hibernate.validator;version="[4.0.0.GA,4.0.0.GA]"
+DynamicImport-Package: *
+Bundle-Version: 1.0.0
+Tool: Bundlor 1.0.0.RELEASE
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.web.bundle
+Import-Package: com.siliconarabia.okarabiacomments.dto,org.hibernate.s
+ earch.annotations,org.hibernate.validator,org.hibernate.validator.con
+ straints,org.springframework.security.authentication,org.springframew
+ ork.security.core,org.springframework.security.core.context,org.sprin
+ gframework.security.core.userdetails
+

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Export-Package: com.siliconarabia.okarabiacomments.dao;version="1.0.0"
+ ;uses:="com.pearlox.framework.dao,com.siliconarabia.okarabiacomments.
+ domain"
+DynamicImport-Package: *
+Bundle-Version: 1.0.0
+Tool: Bundlor 1.0.0.RELEASE
+Import-Package: com.pearlox.framework.dao,com.siliconarabia.okarabiaco
+ mments.domain,javax.persistence,org.apache.commons.dbcp,org.hibernate
+ .ejb,org.springframework.beans.factory.config,org.springframework.orm
+ .jpa,org.springframework.orm.jpa.support,org.springframework.orm.jpa.
+ vendor,org.springframework.transaction
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.dao
+

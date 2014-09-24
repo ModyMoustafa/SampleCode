@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Export-Package: com.siliconarabia.okarabiacomments.ws.comment.impl;ver
+ sion="1.0.0";uses:="com.pearlox.framework.ws.exception,com.siliconara
+ bia.okarabiacomments.dto,com.siliconarabia.okarabiacomments.ws.commen
+ t.api,org.springframework.beans.factory.annotation"
+Require-Bundle: com.pearlox.framework,com.siliconarabia.okarabiacommen
+ ts.comment.service;bundle-version="1.0.0",com.siliconarabia.okarabiac
+ omments.dao;bundle-version="1.0.0",com.siliconarabia.okarabiacomments
+ .dao-impl;bundle-version="1.0.0"
+DynamicImport-Package: *
+Unversioned-Imports: *
+Bundle-Version: 1.0.0
+Tool: Bundlor 1.0.0.RELEASE
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.ws.comment-imp
+ l
+Import-Package: com.pearlox,com.pearlox.framework.converter,com.pearlo
+ x.framework.domain,com.pearlox.framework.dto,com.pearlox.framework.se
+ ttings,com.pearlox.framework.ws.exception,com.pearlox.varaza.osgi,com
+ .siliconarabia.okarabiacomments.comment.service.api,com.siliconarabia
+ .okarabiacomments.converter,com.siliconarabia.okarabiacomments.domain
+ ,com.siliconarabia.okarabiacomments.dto,com.siliconarabia.okarabiacom
+ ments.ws.comment.api,javax.persistence,org.slf4j,org.springframework.
+ beans.factory.annotation,org.springframework.context.support,org.spri
+ ngframework.transaction
+

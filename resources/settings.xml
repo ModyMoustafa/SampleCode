@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+	<profiles>
+
+		<profile>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<comments.db.user>okarabiacomments</comments.db.user>
+				<comments.db.password>okarabiacomments</comments.db.password>
+				<linkedin.appId>16q8gzf4d2o5</linkedin.appId>
+				<linkedin.secret>EvoAYCmpQB5E715e</linkedin.secret>
+
+				<security.system.url>http://test.pashacode.com:8086/auth</security.system.url>
+				<tracking.ws.context>http://test.pashacode.com/tracking-ws/api</tracking.ws.context>
+				<local.ws.context>http://localhost:8072/okarabiacomments/api</local.ws.context>
+			</properties>
+		</profile>
+
+		<!-- ### profiles ### -->
+
+		<profile>
+			<id>local</id>
+			<properties>
+				<twitter.callback>http://localhost:8072/callback/twitter</twitter.callback>
+				<app.url.online>http://localhost:8072</app.url.online>
+				<linkedin.callback>http://localhost:8072/connect/linkedin</linkedin.callback>
+				<facebook.appId>282619991766032</facebook.appId>
+				<facebook.secret>13545285187a8c894691e7df90c19ba8</facebook.secret>
+				<comments.db.url>jdbc\:postgresql\://localhost\:5432/okarabiacomments</comments.db.url>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>test</id>
+			<properties>
+				<twitter.callback>http://test.okarabia.com:8072/callback/twitter</twitter.callback>
+				<app.url.online>http://test.okarabia.com:8072</app.url.online>
+				<linkedin.callback>http://test.okarabia.com:8072/connect/linkedin</linkedin.callback>
+				<facebook.appId>221363104599184</facebook.appId>
+				<facebook.secret>60c3a504227b6887bb85e1ea1c5e0228</facebook.secret>
+				<comments.db.url>jdbc\:postgresql\://localhost\:5432/okarabiacomments</comments.db.url>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>production</id>
+			<properties>
+				<twitter.callback>http://www.okarabia.com:8072/callback/twitter</twitter.callback>
+				<app.url.online>http://www.okarabia.com:8072</app.url.online>
+				<linkedin.callback>http://www.okarabia.com:8072/connect/linkedin</linkedin.callback>
+				<comments.db.url>jdbc\:postgresql\://173.255.237.156\:5432/okarabiacomments</comments.db.url>
+				<facebook.appId>269057783144507</facebook.appId>
+				<facebook.secret>f63d384d8dc83c940d3a9776939f9c95</facebook.secret>
+			</properties>
+		</profile>
+
+	</profiles>
+
+</settings>

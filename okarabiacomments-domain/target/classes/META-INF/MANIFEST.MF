@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Require-Bundle: com.pearlox.framework,com.springsource.javax.persisten
+ ce;version="[1.0.0,1.0.0]",com.springsource.org.hibernate;version="[3
+ .3.0.GA,3.4.0.GA]"
+Export-Package: com.siliconarabia.okarabiacomments.domain;version="1.0
+ .0";uses:="com.pearlox.framework.converter,com.pearlox.framework.doma
+ in,javax.persistence"
+DynamicImport-Package: *
+Bundle-Version: 1.0.0
+Tool: Bundlor 1.0.0.RELEASE
+Import-Package: com.pearlox.framework.converter,com.pearlox.framework.
+ domain,javax.persistence
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.domain
+

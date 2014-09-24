@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Require-Bundle: com.springsource.javax.activation;version="1.1.1",com.
+ siliconarabia.okarabiacomments.dao;bundle-version="1.0.0",com.silicon
+ arabia.okarabiacomments.dao-impl;bundle-version="1.0.0"
+Export-Package: com.siliconarabia.okarabiacomments.converter;version="
+ 1.0.0";uses:="org.springframework.stereotype"
+Bundle-Version: 1.0.0
+Tool: Bundlor 1.0.0.RELEASE
+Import-Package: com.siliconarabia.okarabiacomments.domain,com.silicona
+ rabia.okarabiacomments.dto,org.slf4j,org.springframework.stereotype
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.converter
+

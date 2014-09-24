@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Export-Package: com.pearlox.varaza.ext;version="1.0.0";uses:="javax.ws
+ .rs,javax.ws.rs.core,javax.ws.rs.ext"
+Fragment-Host: com.pearlox.varaza
+Bundle-Version: 1.0.0
+Tool: Bundlor 1.0.0.RELEASE
+Bundle-Name: Varaza Extender
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.extender
+Import-Package: com.pearlox.varaza.cxf,com.pearlox.varaza.osgi,com.pea
+ rlox.varaza.osgi.impl,javax.ws.rs,javax.ws.rs.core,javax.ws.rs.ext,or
+ g.osgi.service.event
+

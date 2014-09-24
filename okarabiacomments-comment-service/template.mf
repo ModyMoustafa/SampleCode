@@ -1,0 +1,9 @@
+Require-Bundle: com.siliconarabia.okarabiacomments.domain;bundle-version="1.0.0",
+ com.springsource.javax.mail,
+ com.siliconarabia.okarabiacomments.dao,
+ com.siliconarabia.okarabiacomments.dao-impl,
+ com.pearlox.framework;bundle-version="0.0.1"
+Excluded-Imports: com.siliconarabia.okarabiacomments.*
+Export-Package: com.siliconarabia.okarabiacomments.comment.service
+DynamicImport-Package: *
+ 

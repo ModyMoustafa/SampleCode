@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:osgi="http://www.springframework.org/schema/osgi"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+	  http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd
+	  http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	  http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	  http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+	<context:component-scan base-package="com.siliconarabia.okarabiacomments.web" />
+	<!-- - This bean configures the 'prefix' and 'suffix' properties of - InternalResourceViewResolver, 
+		which resolves logical view names - returned by Controllers. For example, 
+		a logical view name of "console" - will be mapped to "/WEB-INF/jsp/console.jsp". -->
+
+
+	<bean id="localeResolver"
+		class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<!--<property name="cookieName" value="language" /> -->
+		<!--<property name="cookieMaxAge" value="3600" /> -->
+		<property name="defaultLocale" value="en" />
+	</bean>
+
+	<bean id="localeChangeInterceptor"
+		class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="siteLang" />
+	</bean>
+
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+		<property name="interceptors">
+			<list>
+				<ref bean="localeChangeInterceptor" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver" />
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+
+	<bean id="freemarkerConfig"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer"
+		abstract="false" lazy-init="default" autowire="default">
+		<property name="templateLoaderPaths">
+			<list>
+				<value>/WEB-INF/freemarker/</value>
+				<value>classpath:</value>
+			</list>
+		</property>
+		<!-- <property name="templateLoaderPath" value="/WEB-INF/freemarker/"/> -->
+		<property name="freemarkerSettings">
+			<props>
+				<prop key="datetime_format">MM/dd/yyyy</prop>
+				<prop key="number_format">0.#####</prop>
+				<prop key="url_escaping_charset">UTF-8</prop>
+				<prop key="default_encoding">UTF-8</prop>
+				<prop key="template_update_delay">0</prop>
+
+			</props>
+		</property>
+	</bean>
+
+	<bean
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="order" value="1" />
+		<property name="mediaTypes">
+			<map>
+				<entry key="html" value="text/html" />
+				<entry key="ftl" value="text/html" />
+				<entry key="json" value="application/json" />
+				<entry key="rss" value="application/rss+xml" />				
+			</map>
+		</property>
+		<property name="defaultViews">
+			<list>
+				<bean
+					class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" />
+			</list>
+		</property>		
+		<property name="ignoreAcceptHeader" value="true" />
+	</bean>
+		
+	<bean id="beanNameViewResolver" 
+		class="org.springframework.web.servlet.view.BeanNameViewResolver"/>			
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver"
+		p:cache="false" p:prefix="" p:suffix=".ftl" p:contentType="text/html;charset=UTF-8"
+		p:exposeSpringMacroHelpers="true" p:exposeSessionAttributes="true" />
+
+	<osgi:reference id="applicationSettings"
+		interface="com.pearlox.framework.settings.ApplicationSettings" />
+
+	<!-- Message & Error bundles -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>WEB-INF/messages</value>
+				<value>WEB-INF/errors</value>
+				<value>WEB-INF/app</value>
+			</list>
+		</property>
+		<property name="defaultEncoding" value="UTF-8" />
+	</bean>
+
+	<bean
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="false" />
+		<property name="locations">
+			<list>
+				<value>WEB-INF/messages.properties</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

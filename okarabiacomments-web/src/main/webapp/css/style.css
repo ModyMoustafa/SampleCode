@@ -1,0 +1,167 @@
+@CHARSET "UTF-8";
+
+body {
+	font-size: 13px;
+	font-family: sans-serif;
+	margin: 0 auto;
+	padding: 0px;
+}
+
+#wrap {
+	width: 97%;
+	margin: 0 auto;
+	float: left;
+	height: 100%;
+}
+
+.cmnt {
+	clear: both;
+	float: left;
+	height: 100%;
+	margin: 0 auto;
+	padding: 5px;
+	width: 100%;
+}
+
+.cmntCount {
+	float: left;
+	font-weight: bold;
+}
+
+.postContent {
+	float: left;
+	width: 78%;
+}
+
+.postCmnt {
+	border-bottom: 1px solid #ABABAB;
+	clear: both;
+	float: left;
+	height: 100%;
+	margin: 5px 0;
+	width: 100%;
+}
+
+.post {
+	clear: both;
+	float: left;
+	height: 100%;
+	width: 100%;
+}
+
+.old {
+	clear: both;
+	float: left;
+	height: 100%;
+	margin-left: 70px;
+	width: 83%;
+}
+
+img {
+	border: 1px solid #ababab;
+	float: left;
+	height: 60px;
+	width: 60px;
+	margin: 5px 10px 5px 5px;
+}
+
+a {
+	text-decoration: none;
+	color: #27579c;
+	margin: 0 auto;
+	padding: 3px;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.date {
+	color: #a3a3a3;
+}
+
+p {
+	margin: 0 auto;
+	padding: 3px;
+	width: 100%;
+	word-wrap: break-word;
+}
+
+h4 {
+	margin: 0 auto;
+	padding: 3px;
+	margin-left: -3px;
+}
+
+.addCmnt {
+	
+}
+
+.addCmnt a {
+	font-weight: bold;
+}
+
+.addCmnt a:hover {
+	cursor: pointer;
+}
+
+.clickable:hover {
+	cursor: pointer;
+}
+
+#newCmnt {
+	background: none repeat scroll 0 0 #EDEDED;
+	clear: both;
+	display: block;
+	float: left;
+	height: 100px;
+	margin: 0 auto 0 -5px;
+	padding: 5px;
+}
+
+#newReplyCmnt {
+	margin: 0 auto;
+	padding: 5px;
+	background: #ededed;
+	height: 100px;
+	/*display: none;*/
+	margin-left: 45px;
+	float: left;
+}
+
+.x {
+	
+}
+
+#textarea {
+	border: 1px solid #27579c;
+	resize: none;
+	margin-top: 5px;
+	width: 80%;
+	height: 50%;
+}
+
+#cmntTextarea {
+	border: 1px solid #27579c;
+	resize: none;
+	margin-left: 5px;
+	margin-top: 5px;
+	width: 86.5%;
+	height: 50%;
+}
+
+.cmntBtn {
+	color: #454545;
+	font-weight: bold;
+	float: right;
+	margin: 5px auto;
+}
+
+.thumbUp img {
+	float: none;
+	height: 12px;
+	width: 12px;
+	margin: 0 auto;
+	padding: 0px;
+	border: none;
+}

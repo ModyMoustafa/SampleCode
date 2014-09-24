@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Export-Package: com.siliconarabia.okarabiacomments.ws.user.impl;versio
+ n="1.0.0";uses:="com.pearlox.framework.ws.exception,com.siliconarabia
+ .okarabiacomments.dto,com.siliconarabia.okarabiacomments.ws.user.api,
+ org.springframework.beans.factory.annotation"
+Require-Bundle: com.pearlox.framework,com.siliconarabia.okarabiacommen
+ ts.user.service;bundle-version="1.0.0",com.siliconarabia.okarabiacomm
+ ents.dao;bundle-version="1.0.0",com.siliconarabia.okarabiacomments.da
+ o-impl;bundle-version="1.0.0"
+DynamicImport-Package: *
+Unversioned-Imports: *
+Bundle-Version: 1.0.0
+Tool: Bundlor 1.0.0.RELEASE
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.ws.user-impl
+Import-Package: com.pearlox.framework.converter,com.pearlox.framework.
+ domain,com.pearlox.framework.dto,com.pearlox.framework.settings,com.p
+ earlox.framework.ws.exception,com.pearlox.varaza.osgi,com.siliconarab
+ ia.okarabiacomments.domain,com.siliconarabia.okarabiacomments.dto,com
+ .siliconarabia.okarabiacomments.user.service.api,com.siliconarabia.ok
+ arabiacomments.ws.user.api,com.siliconnile.security.client,com.silico
+ nnile.security.dto,javax.persistence,org.slf4j,org.springframework.be
+ ans.factory.annotation,org.springframework.security.core,org.springfr
+ amework.security.core.context,org.springframework.transaction
+

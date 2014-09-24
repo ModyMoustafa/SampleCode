@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/osgi"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">	
+
+	<reference id="entityManagerFactory" interface="javax.persistence.EntityManagerFactory" />
+	
+	<reference id="transactionManager"
+		interface="org.springframework.transaction.PlatformTransactionManager" />
+		
+	<reference id="webServiceRegistry" interface="com.pearlox.varaza.osgi.WebServiceRegistry" />
+	
+	<reference id="applicationSettings"
+		interface="com.pearlox.framework.settings.ApplicationSettings" />
+		
+	<service interface="com.siliconarabia.okarabiacomments.ws.user.api.UserWebService">
+		<registration-listener ref="webServiceRegistry"
+			registration-method="registerService" />
+		<service-properties>
+			<beans:entry key="ws-url" value="/user" />
+			<beans:entry key="ws-type" value="rest,soap" />
+		</service-properties>
+		<beans:bean class="com.siliconarabia.okarabiacomments.ws.user.impl.UserWebServiceImpl"
+			autowire="autodetect" />
+	</service>
+</beans:beans>

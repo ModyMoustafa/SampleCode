@@ -1,0 +1,194 @@
+.registration{
+    border: 1px solid #71A318;
+    float: left;
+    padding-bottom: 30px;
+    width: 820px;
+    margin: 10px 0px 20px 123px;
+}
+.registration a{
+	color: #33669e;
+	float: left;
+	clear: both;
+	cursor: pointer !important;
+	margin: 20px 0px 0px 175px;
+}
+#registrationForm{
+	float: left;
+	clear: both;
+	width: 760px;
+	margin: 30px;
+	margin-top: 0px;
+}
+#registrationForm label{
+	float: left;
+	clear: both;
+}
+#registrationForm input{
+	float: left;
+	clear: both;
+	border: 1px solid #ababab;
+
+}
+.TB{
+	width: 312px;
+	height: 25px;
+	float: left !important;
+	clear: none !important;
+	margin: 20px 20px 5px 30px;
+	padding: 0 !important;
+	padding-left: 7px !important;
+}
+.TB:hover{
+	background: #f9fedf;
+	border: 1px solid #000 !important;
+}
+.TB:focus{
+	background: #f9fedf;
+	border: 1px solid #000 !important;
+}
+#registerBtn{
+	height: 25px;
+	width: 80px;
+	margin: 20px 0px 0px 145px !important;
+	font-weight: bold;
+}
+.enabled:hover{
+	background: #ededed;
+	color: #000;
+	font-weight: bold;
+	cursor: pointer;
+}
+.disabled:hover{
+	background: #ededed;
+	color: #808080;
+	font-weight: bold;
+}
+.enabled{
+	background: #ededed;
+	color: #000;
+}
+.disabled{
+	background: #ededed;
+	color: #808080;
+}
+#passwd{
+	float: left;
+	clear: none !important;
+	width: 312px;
+	height: 25px;
+	margin: 20px 20px 0px 30px;
+	padding-left: 7px;
+}
+#passwd:hover{
+	background: #f9fedf;
+	border: 1px solid #000 !important;
+}
+#passwd:focus{
+	background: #f9fedf;
+	border: 1px solid #000 !important;
+}
+.passwdStrength{
+	float: left;
+	clear: none !important;
+	width: 115px;
+	margin-top: 20px;
+	height: 30px;
+}
+.passwdStrength span{
+	float: left;
+	clear: both !important;
+	font-weight: normal;
+	font-size: 13px;
+	margin-top: -1px;
+	margin-bottom: 2px;
+	color: #454545;
+}
+.dash{
+	height: 7px;
+	width: 18px;
+	border: 1px solid #ababab !important;
+	float: left;
+	margin-right: 5px;
+}
+#weak{
+	clear: left !important;
+}
+#good{}
+#strong{}
+#passwdHint{
+	float: left;
+	width: 135px;
+	clear: none !important;
+	color: #ba0000;
+	font-size: 13px;
+	margin: 20px 0px 0px 7px;
+	display: none;
+}
+#passwdHint li{
+	list-style-type: circle;
+	padding: 0px;
+}
+
+#emailLb{
+	margin: 20px 76px 0px 0px;
+}
+#passwdLb{
+	margin: 20px 49px 0px 0px;
+}
+#cnfrmPasswdLb{
+	margin: 20px 0px 0px 0px;
+}
+#cnfrmPasswdHint{
+	float: left;
+	clear: none;
+	color: #ba0000;
+	font-size: 13px;
+	width: 180px;
+	margin: 20px 0px 0px 0px;
+	display: none;
+	padding-left: 7px;
+}
+#cnfrmPasswdHint li{
+	list-style-type: circle;
+	padding: 0px;
+}
+#emailHint{
+	float: left;
+	clear: none !important;
+	font-size: 13px;
+	color: #ba0000;
+	margin-top: 20px;
+	width: 260px;
+	padding-left: 7px;
+	display: none;
+}
+#emailHint li{
+	list-style-type: circle;
+	padding: 0px;
+	float: left;
+	clear: none;
+	width: 260px;
+}
+#emailHint li span{
+	color: #454545;
+}
+#emailRq{
+	display: block;
+}
+#passwdRq{
+	display: none;
+}
+.txtVisible{
+	display: block;
+}
+.txtInvisible{
+	display: none;
+}
+.Rq{
+	float: left;
+	clear: both;
+	font-size: 13px;
+	color: #454545;
+	margin-left: 145px;
+	width: 310px;
+}

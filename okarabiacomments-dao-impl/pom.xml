@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<project> 
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>okarabiacomments</artifactId>
+		<groupId>com.siliconarabia.okarabiacomments</groupId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>${project.groupId}.dao-impl</artifactId>
+	<packaging>jar</packaging>
+	<name>okarabiacomments DAO impl</name>
+	<description>okarabiacomments DAO implementation bundle</description>
+	<version>1.0.0</version>
+
+	<properties>
+		<spring.osgi.symbolic.name>${symName.prefix}dao-impl
+		</spring.osgi.symbolic.name>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.groupId}.domain</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.groupId}.dao</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.groupId}.dto</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+	</dependencies>
+</project>

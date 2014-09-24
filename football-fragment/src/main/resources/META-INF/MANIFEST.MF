@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Fragment-Host: com.siliconarabia.okarabiacomments-web
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.web.football.fragment
+Bundle-Name: football-fragment
+Bundle-Description: football pages fragment for the okarabiacomments

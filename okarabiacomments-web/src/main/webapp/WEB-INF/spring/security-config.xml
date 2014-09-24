@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security 
+                        http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+
+	<global-method-security pre-post-annotations="enabled"
+		secured-annotations="enabled" />
+
+	<http use-expressions="true" auto-config="true">
+		<session-management session-fixation-protection="migrateSession"></session-management>
+
+		<intercept-url pattern="/images/**" filters="none" />
+		<intercept-url pattern="/**/images/**" filters="none" />
+
+		<intercept-url pattern="/css/**" filters="none" />
+		<intercept-url pattern="/**/css/**" filters="none" />
+
+		<intercept-url pattern="/js/**" filters="none" />
+		<intercept-url pattern="/**/js/**" filters="none" />
+
+		<intercept-url pattern="/config/**" filters="none" />
+
+		<!-- next "intercept" means that all pages, that not explicitly declared 
+			here with public access, will be available in private access, thus can be 
+			accessed only after authorization -->
+		<form-login login-processing-url="/j_spring_security_check"
+			login-page="/login" authentication-failure-url="/login?login_fail=1"
+			default-target-url="/redirect" always-use-default-target="false" />
+
+		<logout invalidate-session="true" logout-url="/logout" />
+
+	</http>
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider ref="authProvider" />
+		<authentication-provider ref="facebookAuthenticationProvider" />
+		<authentication-provider ref="twitterAuthenticationProvider" />
+		<authentication-provider ref="linkedinAuthenticationProvider" />
+	</authentication-manager>
+
+	<beans:bean id="authProvider"
+		class="com.siliconnile.security.client.SecuritySystemAuthenticatorProvider">
+		<beans:property name="oauth2Address">
+			<beans:value><![CDATA[http://test.pashacode.com:8086/auth/oauth/authorize?client_id=demo&client_secret=demo&response_type=code&grant_type=password&username=%1$s&password=%2$s]]></beans:value>
+		</beans:property>
+		<beans:property name="userServiceAddress"
+			value="http://test.pashacode.com:8086/auth/api/restful/user/current" />
+	</beans:bean>
+
+	<beans:bean id="facebookAuthenticationProvider"
+		class="com.siliconarabia.okarabiacomments.web.security.FacebookAuthenticationProvider">
+	</beans:bean>
+
+	<beans:bean id="twitterAuthenticationProvider"
+		class="com.siliconarabia.okarabiacomments.web.security.TwitterAuthenticationProvider">
+	</beans:bean>
+
+	<beans:bean id="linkedinAuthenticationProvider"
+		class="com.siliconarabia.okarabiacomments.web.security.LinkedinAuthenticationProvider">
+	</beans:bean>
+
+
+</beans:beans>

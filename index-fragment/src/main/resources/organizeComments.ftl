@@ -1,0 +1,1 @@
+<script type="text/javascript" src="http://localhost:8072/okarabia-comment-loader.js?orgcom=true&noc=${noc}&w=${w}&h=${h}&containerid=${containerid}&url=${url}"></script>

@@ -1,0 +1,4 @@
+Bundle-ManifestVersion: 2
+Bundle-Name: Pearlox Framework Settings 
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.settings
+Fragment-Host: com.pearlox.framework

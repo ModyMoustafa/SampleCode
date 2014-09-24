@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Export-Package: com.siliconarabia.okarabiacomments.ws.comment.api;vers
+ ion="1.0.0";uses:="com.pearlox.framework.ws.exception,com.siliconarab
+ ia.okarabiacomments.dto,javax.jws,javax.ws.rs"
+DynamicImport-Package: *
+Bundle-Version: 1.0.0
+Tool: Bundlor 1.0.0.RELEASE
+Import-Package: com.pearlox.framework.ws.exception,com.siliconarabia.o
+ karabiacomments.dto,javax.jws,javax.ws.rs
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.ws.comment-api
+

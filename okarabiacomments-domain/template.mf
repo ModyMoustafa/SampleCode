@@ -1,0 +1,4 @@
+Require-Bundle: com.pearlox.framework,  
+ com.springsource.javax.persistence;version="[1.0.0,1.0.0]", 
+ com.springsource.org.hibernate;version="[3.3.0.GA,3.4.0.GA]" 
+DynamicImport-Package: * 

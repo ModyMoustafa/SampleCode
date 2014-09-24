@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.siliconarabia.okarabiacomments</groupId>
+		<artifactId>okarabiacomments</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<groupId>com.siliconarabia.okarabiacomments</groupId>
+	<artifactId>${project.groupId}.dao</artifactId>
+	<packaging>jar</packaging>
+	<name>okarabiacomments DAO</name>
+	<version>1.0.0</version>
+	<description>okarabiacomments DAO bundle</description>
+
+
+	<properties>
+		<spring.osgi.symbolic.name>${symName.prefix}dao
+		</spring.osgi.symbolic.name>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.pearlox</groupId>
+			<artifactId>com.pearlox.framework</artifactId>
+			<version>${pearlox.framework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.groupId}.domain</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.groupId}.dto</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>com.springsource.javax.persistence</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.0.0.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-search</artifactId>
+			<version>3.1.1.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>org.springframework.security.core</artifactId>
+			<version>3.0.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>com.springsource.org.hibernate.search</artifactId>
+			<version>3.1.1.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.groupId}.domain</artifactId>
+			<version>${project.version}</version>
+		</dependency> 
+		
+	</dependencies> 
+</project>

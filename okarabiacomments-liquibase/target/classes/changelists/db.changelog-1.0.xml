@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+	<changeSet id="1" author="Ali M">
+		<createTable tableName="user">
+			<column name="id" autoIncrement="true" type="bigint">
+				<constraints nullable="false" />
+			</column>
+			<column name="email" type="varchar(255)" />
+			<column name="avatar" type="varchar(255)" />
+			<column name="full_name" type="varchar(255)" />
+			<column name="profile_id" type="varchar(255)" />
+			<column name="version" type="INTEGER" defaultValue="1" />
+		</createTable>
+		<addPrimaryKey tableName="user" constraintName="user_pkey"
+			columnNames="id" />
+		<!-- Insert Demo Date -->
+		<insert tableName="user">
+			<column name="email" value="test@test.com" />
+			<column name="avatar" value="/home/ali/Pictures/avatar163.png" />
+			<column name="full_name" value="ali T Mahboub" />
+			<column name="profile_id" value="10000287" />
+
+		</insert>
+
+
+	</changeSet>
+
+	<changeSet id="2" author="Ali M">
+		<createTable tableName="comment">
+			<column name="id" autoIncrement="true" type="bigint">
+				<constraints nullable="false" />
+			</column>
+			<column name="comment_body" type="Text" />
+			<column name="user_id" type="bigint" />
+			<column name="comment_hashcode_id" type="bigint" />
+			<column name="version" type="INTEGER" defaultValue="1" />
+			<column name="date_sent" type="TIMESTAMP WITHOUT TIME ZONE" />
+		</createTable>
+		<addPrimaryKey tableName="comment" constraintName="comment_pkey"
+			columnNames="id" />
+
+		<addForeignKeyConstraint constraintName="fk_user_comment"
+			baseTableName="comment" baseColumnNames="user_id"
+			referencedTableName="user" referencedColumnNames="id" />
+		
+		<addForeignKeyConstraint constraintName="fk_hash_comment"
+			baseTableName="comment" baseColumnNames="comment_hashcode_id"
+			referencedTableName="commenthash" referencedColumnNames="id" />
+			
+		<!-- Insert Demo Date -->
+		<insert tableName="comment">
+			<column name="comment_body" value="Hello World" />
+			<column name="user_id" value="1" />
+			<column name="comment_hashcode_id" value="1" />
+			<column name="date_sent" value="2011-06-20 09:57:01" />
+		</insert>
+	</changeSet>
+
+	<changeSet id="3" author="Michael Makram">
+		<createTable tableName="sub_comment">
+			<column name="id" autoIncrement="true" type="bigint">
+				<constraints nullable="false" />
+			</column>
+			<column name="comment_body" type="Text" />
+			<column name="comment_id" type="bigint" />
+			<column name="user_id" type="bigint" />
+			<column name="version" type="INTEGER" defaultValue="1" />
+			<column name="date_sent" type="TIMESTAMP WITHOUT TIME ZONE" />
+		</createTable>
+		<addPrimaryKey tableName="sub_comment" constraintName="sub_comment_pkey"
+			columnNames="id" />
+
+		<addForeignKeyConstraint constraintName="fk_comment"
+			baseTableName="sub_comment" baseColumnNames="comment_id"
+			referencedTableName="comment" referencedColumnNames="id" />
+
+		<addForeignKeyConstraint constraintName="fk_user_sub_comment"
+			baseTableName="sub_comment" baseColumnNames="user_id"
+			referencedTableName="user" referencedColumnNames="id" />
+		<!-- Insert Demo Date -->
+		<insert tableName="sub_comment">
+			<column name="comment_body" value="Hello World Sub Comment" />
+			<column name="user_id" value="1" />
+			<column name="comment_id" value="1" />
+			<column name="date_sent" value="2011-06-20 09:57:01" />
+		</insert>
+	</changeSet>
+</databaseChangeLog>

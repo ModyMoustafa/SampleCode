@@ -1,0 +1,4 @@
+Bundle-ManifestVersion: 2
+Bundle-Name: Jetty configuration bundle
+Bundle-SymbolicName: com.varaza.jetty.conf
+Fragment-Host: org.springframework.osgi.jetty.start.osgi

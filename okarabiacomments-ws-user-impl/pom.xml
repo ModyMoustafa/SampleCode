@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+       	<parent>
+		<groupId>com.siliconarabia.okarabiacomments</groupId>
+		<artifactId>okarabiacomments</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.siliconarabia.okarabiacomments</groupId>
+    <packaging>jar</packaging>
+    <name>okarabiacomments User WS Impl</name>
+    <description>okarabiacomments  User WS Impl</description>
+    <artifactId>${project.groupId}.ws.user-impl</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>${project.groupId}.ws.user-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>${project.groupId}.user.service</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>${project.groupId}.converter</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+		
+		  <!--  Test scope -->
+        <dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.groupId}.settings</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.groupId}.dao</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+		</dependency>
+		
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.groupId}.dao-impl</artifactId>
+			<version>${project.version}</version>
+			<scope>test</scope>
+		</dependency>
+    </dependencies>
+
+</project>

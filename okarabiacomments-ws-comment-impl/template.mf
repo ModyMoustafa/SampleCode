@@ -1,0 +1,7 @@
+Require-Bundle: com.pearlox.framework,
+ com.siliconarabia.okarabiacomments.comment.service;bundle-version="1.0.0",
+ com.siliconarabia.okarabiacomments.dao;bundle-version="1.0.0",
+ com.siliconarabia.okarabiacomments.dao-impl;bundle-version="1.0.0"
+Unversioned-Imports: *
+Excluded-Imports: com.siliconarabia.okarabiacomments,com.pearlox.framework
+DynamicImport-Package: *

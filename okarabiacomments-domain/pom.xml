@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<project>
+	<parent>
+		<groupId>com.siliconarabia.okarabiacomments</groupId>
+		<artifactId>okarabiacomments</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>${project.groupId}.domain</artifactId>
+	<packaging>jar</packaging>
+	<name>okarabiacomments Domain</name>
+	<description>okarabiacomments Domain Bundle</description>
+
+	<properties>
+		<spring.osgi.symbolic.name>${symName.prefix}domain
+		</spring.osgi.symbolic.name>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.pearlox</groupId>
+			<artifactId>com.pearlox.framework</artifactId>
+			<version>${pearlox.framework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>com.springsource.javax.persistence</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>4.0.0.GA</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-search</artifactId>
+			<version>3.1.1.GA</version>
+		</dependency>
+
+	</dependencies>
+</project>

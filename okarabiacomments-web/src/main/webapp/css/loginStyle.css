@@ -1,0 +1,170 @@
+.loginBox {
+	border: 1px solid #71A318;
+    float: left;
+    margin: 5px 5px 0;
+    width: 478px;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+#loginForm {
+	clear: both;
+	width: 465px;
+	margin: -5px 10px 15px;;
+	float: left;
+	clear: both;
+}
+
+#loginForm input {
+	border: 1px solid #ababab;
+	margin-top: 16px;
+}
+
+#loginForm label {
+	float: left;
+	clear: left;
+	margin-top: 16px;
+}
+
+#j_username {
+	float: left;
+	clear: right;
+	height: 25px;
+	width: 365px;
+	margin-left: 35px;
+	padding-left: 7px;
+}
+
+#j_username:hover {
+	background: #f9fedf;
+	border: 1px solid #000;
+}
+
+#j_username:focus {
+	background: #f9fedf;
+	border: 1px solid #000;
+}
+
+#j_password {
+	float: left;
+	clear: right;
+	height: 25px;
+	width: 365px;
+	margin-left: 8px;
+	padding-left: 7px;
+}
+
+#j_password:hover {
+	background: #f9fedf;
+	border: 1px solid #000;
+}
+
+#j_password:focus {
+	background: #f9fedf;
+	border: 1px solid #000;
+}
+
+#persistent {
+	float: left;
+	clear: left;
+	margin-left: 74px;
+}
+
+#persistentLabel {
+	float: left;
+	clear: right !important;
+}
+
+#loginBtn {
+	float: left;
+	clear: both;
+	width: 60px;
+	height: 25px;
+	font-weight: bold;
+	margin: 0 0 2px 74px;
+}
+
+.enabled:hover {
+	background: #ededed;
+	color: #000;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.disabled:hover {
+	background: #ededed;
+	color: #808080;
+	font-weight: bold;
+}
+
+.enabled {
+	background: #ededed;
+	color: #000;
+}
+
+.disabled {
+	background: #ededed;
+	color: #808080;
+}
+
+.loginBox a {
+	
+}
+
+a.fb_button,a.fb_button_rtl,.fb_button,.fb_button_rtl {
+	float: right;
+	margin: 2px 5px 0 0;
+}
+
+.links {
+	clear: both;
+	margin-left: 74px;
+}
+
+.links a {
+	clear: right;
+	color: #33669E;
+	float: left;
+	margin-right: 65px;
+	margin-top: 9px;
+	font-size: 15px;
+}
+
+.links span {
+	clear: left;
+	color: #616161;
+	float: left;
+	margin-right: 7px;
+	margin-top: 10px;
+}
+
+#emailHint {
+	float: left;
+	clear: none !important;
+	font-size: 13px;
+	color: #ba0000;
+	margin: 0px 0px 0px 74px;
+	display: none;
+	margin-top: 5px;
+}
+
+#emailHint span {
+	color: #454545;
+}
+/*#registerBtn{
+	background: #71A318;
+	color: #fff;
+	font-weight: bold;
+	border: 1px solid #ababab;
+	height: 20px;
+	width: 75px;
+	text-align: center;
+	margin-top: 10px;
+	padding-top: 5px;
+}*/

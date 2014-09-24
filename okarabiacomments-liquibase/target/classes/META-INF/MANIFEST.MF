@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Export-Package: changelists;version="1.0.0"
+Bundle-Version: 1.0.0
+Tool: Bundlor 1.0.0.RELEASE
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.liquibase
+

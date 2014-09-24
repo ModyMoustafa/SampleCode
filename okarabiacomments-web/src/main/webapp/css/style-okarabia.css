@@ -1,0 +1,784 @@
+@charset "utf-8";
+
+html {
+	height: 100%;
+}
+
+html,body,ul,ol,li,p,h1,h2,h3,h4,h5,h6,form,fieldset,a,img,input {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+a,img {
+	width: auto;
+	float: left;
+	outline: none;
+	text-decoration: none;
+}
+
+ul,li {
+	width: auto;
+	float: left;
+	list-style-type: none;
+}
+
+body {
+	height: auto;
+	font-size: 14px;
+	font-family: Arial, Verdana;
+	background-color: #ffffff;
+	position: relative;
+}
+
+.wrap,header,top_srch form div,footer,.sr_res div {
+	width: 100%;
+	float: left;
+	display: block;
+}
+
+.main {
+	margin: 0 auto;
+}
+
+/*** Header  ***/
+header {
+	position: fixed;
+	top: 0;
+	z-index: 100;
+}
+
+.top_nav {
+	background-color: #000;
+	height: 25px;
+	color: #fff;
+	font-size: 13px;
+}
+
+.top_nav a {
+	color: #fff;
+}
+
+.top_lft,.top_rght {
+	display: inline;
+}
+
+.top_rght,.top_rght li {
+	float: right;
+}
+
+.top_nav li {
+	padding: 2px 8px;
+	border-top: 5px solid #000;
+}
+
+.top_lft li.current,.top_lft li.current:hover {
+	border-top-color: #71A318;
+	font-weight: bold;
+}
+
+.top_lft li:hover {
+	border-top-color: red;
+}
+
+.top_rght a {
+	float: none;
+	margin: 0 8px;
+}
+
+.top_rght .st_lnk {
+	margin: -3px 4px 0 0;
+	float: right;
+}
+
+.top_srch {
+	height: 63px;
+	background-color: #71A318;
+	position: relative;
+}
+
+.top_srch .main {
+	width: 835px;
+	margin-top: 5px;
+}
+
+.logo {
+	margin-right: 4px;
+}
+
+.logo img {
+	width: 165px;
+	height: 29px;
+}
+
+.top_srch form {
+	width: auto;
+	float: left;
+	margin-top: 1px;
+	position: relative;
+}
+
+.top_srch form div {
+	width: auto;
+	float: left;
+}
+
+.srch_box {
+	width: 511px;
+	border: 1px solid #5E821A;
+	font-size: 12px;
+	padding: 4px 22px 2px 7px;
+	float: left;
+	font: 17px arial, sans-serif;
+}
+
+.srch_box:hover,.srch_box:focus {
+	border-color: #000;
+	background-color: #F9FEDF;
+}
+
+.src_frm:hover .srch_box,.src_frm:hover #clear input {
+	background-color: #F9FEDF;
+}
+
+.srch_btn {
+	cursor: pointer;
+	height: 29px;
+	color: #fff;
+	border: 1px solid #000;
+	background-color: #000;
+	padding: 2px 5px 3px 5px;
+	margin-left: -1px;
+	float: left;
+	color: #fff;
+	font-size: 16px;
+}
+
+.srch_btn:hover {
+	border-color: #404040;
+	background-color: #404040;
+}
+
+.nav_bar {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 20px;
+	widh: 100%;
+}
+
+.nav_bar li {
+	border: 1px solid #000;
+	padding: 1px 5px;
+}
+
+.nav_bar li.current {
+	padding: 1px 10px;
+}
+
+.nav_bar li.current,.nav_bar li.current:hover {
+	background-color: #fff;
+	border-bottom-color: #fff;
+	font-weight: bold;
+}
+
+.nav_bar li a {
+	color: #000;
+	padding: 0 5px;
+}
+
+.nav_bar li:hover {
+	background-color: #000;
+}
+
+.nav_bar li:hover a {
+	color: #fff;
+}
+
+#clear {
+	left: 520px;
+	position: absolute;
+	top: 7px;
+	z-index: 10;
+}
+
+#clear input {
+	background-color: #FFFFFF;
+	border: medium none !important;
+	color: red;
+	cursor: pointer;
+	font-family: arial;
+	font-size: 13px;
+	font-weight: bold;
+	margin: 0 !important;
+	padding: 0 !important;
+	cursor: pointer;
+}
+
+#clear:hover {
+	top: 2px;
+	left: 518px;
+}
+
+#clear input:hover {
+	color: #71A318;
+	font-size: 19px;
+}
+
+/*** Header end ***/ /*** Main page content ***/
+.enter_content {
+	padding-bottom: 15px;
+}
+
+.enter_content .main {
+	width: 490px;
+}
+
+h1 {
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	color: #2B6D44;
+	font-weight: normal;
+	float: left;
+	display: block;
+}
+
+.entr_prt {
+	width: 390px;
+	float: left;
+	margin-top: 50px;
+}
+
+.entr_prt .block {
+	width: 100%;
+	float: left;
+	margin-top: 10px;
+}
+
+.entr_prt .ttl {
+	font-weight: bold;
+	color: #A3C83D;
+	font-size: 16px;
+}
+
+.entr_prt p {
+	width: 100%;
+	float: left;
+	display: block;
+	font-size: 13px;
+	color: #8B92A4;
+	line-height: 2em;
+}
+
+.entr_prt p a {
+	float: none;
+	color: #33669E;
+	text-decoration: underline;
+}
+
+.reccom {
+	float: left;
+	text-decoration: underline;
+	color: #A3C83D;
+	margin-top: 100px;
+}
+
+.fb_prt {
+	float: right;
+	width: 417px;
+	margin-top: 25px;
+}
+
+/*** Main page content end ***/ /*** Results page content ***/
+.resl_cont {
+	padding-bottom: 25px;
+}
+
+.resl_cont .main {
+	width: 1100px;
+	padding-top: 95px;
+}
+
+.coll_left {
+	width: 127px;
+	border-right: 1px solid #009444;
+	padding-right: 8px;
+	text-align: right;
+	float: left;
+}
+
+.coll_left ul,.coll_left ul li {
+	width: 100%;
+	float: right;
+}
+
+.coll_left ul li {
+	line-height: 24px;
+}
+
+.coll_left li:hover {
+	background-color: #E0E0E0;
+}
+
+.coll_left a {
+	float: right;
+	color: #70B810;
+}
+
+.coll_left a:hover {
+	text-decoration: underline;
+}
+
+.mic_Everything {
+	background:
+		url("http://www.okarabia.com/images/category/Everything.png")
+		no-repeat scroll left center transparent;
+}
+
+.mic {
+	float: right;
+	height: 19px;
+	margin-left: 5px;
+	margin-top: 2px;
+	outline: medium none;
+	padding-right: 1px;
+	width: 19px;
+	opacity: 0.4;
+}
+
+.mic_News {
+	background: url("http://www.okarabia.com/images/category/News.png")
+		no-repeat scroll left center transparent;
+}
+
+.mic_Sports {
+	background: url("http://www.okarabia.com/images/category/Sports.png")
+		no-repeat scroll left center transparent;
+}
+
+.mic_Music {
+	background: url("http://www.okarabia.com/images/category/mp3-icon.png")
+		no-repeat scroll left center transparent;
+}
+
+.mic_one {
+	background-position: -20px -85px;
+}
+
+.mic_2 {
+	background-position: -40px -85px;
+}
+
+.mic_3 {
+	background-position: -80px -85px;
+}
+
+.mic_4 {
+	background-position: -120px -85px;
+}
+
+.mic_5 {
+	background-position: -120px -105px;
+}
+
+.mic_6 {
+	background-position: -160px -103px;
+	height: 17px !important;
+	width: 17px !important;
+}
+
+.top_ex .mic {
+	background-position: 0 2px !important;
+}
+
+.top_ex .mic_Everywhere {
+	background:
+		url("http://www.okarabia.com/images/flags/the_Arab_League.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Egypt {
+	background: url("http://www.okarabia.com/images/flags/Egypt.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Algeria {
+	background: url("http://www.okarabia.com/images/flags/Algeria.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_KSA {
+	background: url("http://www.okarabia.com/images/flags/Saudi_Arabia.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Syria {
+	background: url("http://www.okarabia.com/images/flags/Syria.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Tunisia {
+	background: url("http://www.okarabia.com/images/flags/Tunisia.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Kuwait {
+	background: url("http://www.okarabia.com/images/flags/Kuwait.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Lebanon {
+	background: url("http://www.okarabia.com/images/flags/Lebanon.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Qatar {
+	background: url("http://www.okarabia.com/images/flags/Qatar.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Morocco {
+	background: url("http://www.okarabia.com/images/flags/Morocco.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Libya {
+	background: url("http://www.okarabia.com/images/flags/Libya.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Bahrain {
+	background: url("http://www.okarabia.com/images/flags/Bahrain.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Comoros {
+	background: url("http://www.okarabia.com/images/flags/the_Comoros.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Djibouti {
+	background: url("http://www.okarabia.com/images/flags/Djibouti.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Iraq {
+	background: url("http://www.okarabia.com/images/flags/Iraq.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Jordan {
+	background: url("http://www.okarabia.com/images/flags/Jordan.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Mauritania {
+	background: url("http://www.okarabia.com/images/flags/Mauritania.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Oman {
+	background: url("http://www.okarabia.com/images/flags/Oman.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Palestine {
+	background: url("http://www.okarabia.com/images/flags/Palestine.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Somalia {
+	background: url("http://www.okarabia.com/images/flags/Somalia.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Sudan {
+	background: url("http://www.okarabia.com/images/flags/Sudan.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_UAE {
+	background:
+		url("http://www.okarabia.com/images/flags/United_Arab_Emirates.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.top_ex .mic_Yemen {
+	background: url("http://www.okarabia.com/images/flags/Yemen.png")
+		no-repeat scroll 0 0 transparent;
+}
+
+.coll_cntr {
+	width: 490px;
+	float: left;
+	border-left: 1px solid #009444;
+	margin-left: -1px;
+	padding-left: 10px;
+	word-wrap: break-word;
+}
+
+.sr_res {
+	width: 100%;
+	float: left;
+	padding: 5px 0;
+	border-bottom: 1px solid #E2E5E8;
+}
+
+.sr_res p {
+	width: 100%;
+	float: left;
+	display: block;
+	color: #8B8B8B;
+	font-size: 13px;
+}
+
+.sr_res .g {
+	float: none;
+	color: #70B810;
+	margin-right: 2px;
+}
+
+.sr_res div a {
+	float: none;
+	color: #497BB6;
+	margin: 0 2px;
+}
+
+.sr_res h3 a {
+	color: #70B810;
+	text-decoration: underline;
+}
+
+.sr_res_res_fr {
+	margin-top: 8px;
+}
+
+.sr_res_res {
+	border-bottom: 1px solid #E2E5E8;
+	padding-bottom: 6px;
+	padding-left: 20px;
+	padding-top: 8px;
+}
+
+.sr_res.sr_res_res.sr_res_res_fr .ssname {
+	width: 300px;
+	float: right;
+	color: #8B8B8B;
+	font-size: 13px;
+}
+
+.sr_res.sr_res_res.sr_res_res_fr .ssname a {
+	color: #71A318
+}
+
+.sr_res.sr_res_res.sr_res_res_fr .ssname .catt {
+	font-weight: bold;
+}
+
+.soc_web {
+	width: 275px;
+	float: right;
+}
+
+/*** pages **/
+.pages {
+	width: 100%;
+	float: left;
+	padding: 10px 0;
+	text-align: center;
+	display: inline;
+	margin-top: 10px;
+}
+
+.pages ul {
+	width: 100%;
+	text-align: center;
+}
+
+.pages li {
+	margin: 0 2px;
+	float: none;
+	display: inline-block;
+}
+
+.pages a {
+	text-decoration: none;
+	border: 1px solid #70B810;
+	padding: 4px 0;
+	width: 26px;
+	font-size: 14px;
+	color: #70B810;
+	font-weight: bold;
+	text-align: center;
+	float: none;
+	display: inline-block;
+	text-align: center;
+	font-size: 14px;
+}
+
+.pages a:hover {
+	background-color: #70B810;
+	color: #FFF;
+}
+
+.pages a.active {
+	background-color: #70B810;
+	color: #FFF;
+}
+
+.prev a,.next a {
+	width: auto;
+	border: none;
+}
+
+.prev a:hover,.next a:hover {
+	background: none;
+	color: #70B810;
+}
+
+.dis a,.dis a:hover {
+	background-color: transparent;
+	color: #B6B6B7;
+	cursor: auto;
+}
+
+/*** Results page content end ***/ /*** Footer ***/
+footer {
+	background-color: #000;
+	color: #fff;
+}
+
+footer .main {
+	width: 940px;
+}
+
+footer ul,footer li {
+	width: 200px;
+}
+
+footer ul {
+	margin-left: 30px;
+	padding: 20px 0;
+}
+
+footer li {
+	margin: 1px 0;
+}
+
+footer .ttl {
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+footer a {
+	color: #fff;
+}
+
+footer a:hover {
+	text-decoration: underline;
+}
+
+.footer_wrap {
+	border-top: 4px solid #fff;
+	padding: 20px 0;
+	text-align: center;
+}
+
+.footer_wrap p {
+	width: 100%;
+	float: left;
+}
+
+.footer_wrap p a {
+	float: none;
+}
+
+/*** Footer end ***/
+.top_1.top_ex .curr {
+	font-weight: bold;
+}
+
+.sr_res_top {
+	float: left;
+	padding-left: 2%;
+	position: relative;
+	width: 100%;
+	padding-top: 10px
+}
+
+.res,.av_se {
+	font-size: 11px;
+	position: absolute;
+	top: 0px;
+}
+
+.football_coll_cntr {
+	width: 485px;
+	margin: 0 auto;
+}
+
+.ul_no_result {
+	list-style-type: none;
+}
+
+.ul_no_result li {
+	float: none;
+	line-height: 170%;
+}
+
+.curr .mic {
+	opacity: 1;
+}
+
+.top_ex li:hover .mic {
+	opacity: 1;
+}
+
+.top_1 li:hover .mic {
+	opacity: 1;
+}
+
+.top_1 .curr {
+	font-weight: bold;
+}
+
+/*********** ad style *********/
+.ad {
+	background: #71a318;
+	color: #ffffff;
+	display: block;
+	float: left;
+	font-size: 13px;
+	height: 40px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 100%;
+	text-align: center;
+}
+
+.adLnk {
+	color: #ffffff;
+	font-size: 21px;
+	text-align: center;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin: 7px;
+	width: 97% !important;
+}
+
+/*********** ad style *********/
+/*Comment iframe border*/
+iframe {
+	border-bottom: 1px solid #ABABAB;
+	border-left: medium none;
+	border-right: medium none;
+	border-top: 1px solid #ABABAB !important;
+}
+
+.sheet_feast {
+	height: 45px;
+	margin-right: 5px;
+	width: 50px;
+}

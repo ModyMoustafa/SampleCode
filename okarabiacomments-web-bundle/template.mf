@@ -1,0 +1,12 @@
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.web.bundle
+Require-Bundle: org.springframework.security.core,com.springsource.org.hibernate.validator;version="[4.0.0.GA,4.0.0.GA]"
+Import-Bundle: com.springsource.javax.validation;version="[1.0.0.GA,1.0.0.GA]",
+ com.springsource.com.sun.xml.bind;version="[2.1.7,2.1.7]",
+ com.springsource.org.hibernate.validator;version="[4.0.0.GA,4.0.0.GA]",
+ com.springsource.org.apache.commons.fileupload;version="[1.2.1,1.2.1]",
+ com.springsource.org.directwebremoting;version="[2.0.4,2.0.4]"
+Import-Package: org.springframework.security.core.userdetails,
+ org.hibernate.search.annotations,
+ org.hibernate.validator,
+ org.hibernate.validator.constraints
+DynamicImport-Package: * 

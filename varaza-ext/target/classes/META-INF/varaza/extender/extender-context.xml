@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/osgi"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                      http://www.springframework.org/schema/osgi http://www.springframework.org/schema/osgi/spring-osgi.xsd">
+
+	<beans:bean id="webServiceRegistry"
+		class="com.pearlox.varaza.osgi.impl.WebServiceRegistryImpl" />
+
+	<beans:bean id="server" class="com.pearlox.varaza.cxf.CXFServer">
+		<beans:property name="serviceRegistry" ref="webServiceRegistry" />
+		<beans:property name="restPrefix" value="/restful" />
+		<beans:property name="restMappings">
+			<beans:map>
+				<beans:entry key="xml" value="application/xml" />
+				<beans:entry key="json" value="application/json" />
+				<beans:entry key="html" value="text/html" />
+				<beans:entry key="feed" value="application/atom+xml" />
+			</beans:map>
+		</beans:property>
+		<beans:property name="providers">
+			<beans:list>
+				<beans:bean class="com.pearlox.varaza.ext.StringListProvider" />
+			</beans:list>
+		</beans:property>
+	</beans:bean>
+
+	<service id="webServiceRegistryService" interface="com.pearlox.varaza.osgi.WebServiceRegistry"
+		ref="webServiceRegistry" context-class-loader="service-provider" />
+
+	<service id="webServiceRegistryEventService" interface="org.osgi.service.event.EventHandler"
+		ref="server" context-class-loader="service-provider">
+		<service-properties>
+			<beans:entry key="event.topics" value="com_varaza_osgi_cxf_bus_REGISTERED" />
+		</service-properties>
+	</service>
+
+
+</beans:beans>

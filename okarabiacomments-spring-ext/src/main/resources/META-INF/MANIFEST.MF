@@ -1,0 +1,6 @@
+Bundle-ManifestVersion: 2
+Bundle-Name: Spring OSGI  Extender 
+Bundle-SymbolicName: com.siliconarabia.okarabiacomments.osgi.extender
+Fragment-Host: org.springframework.osgi.extender
+Require-Bundle: org.springframework.context;bundle-version="3.0.0"
+

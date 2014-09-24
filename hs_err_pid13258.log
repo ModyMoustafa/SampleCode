@@ -1,0 +1,542 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xb7731e8f, pid=13258, tid=2176842608
+#
+# JRE version: 6.0_21-b06
+# Java VM: Java HotSpot(TM) Server VM (17.0-b16 mixed mode linux-x86 )
+# Problematic frame:
+# C  [libc.so.6+0x114e8f]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x09828800):  JavaThread "Timer-2" daemon [_thread_in_native, id=13346, stack(0x81baf000,0x81c00000)]
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=2 (SEGV_ACCERR), si_addr=0x8360b000
+
+Registers:
+EAX=0x836095c0, EBX=0xb775bf00, ECX=0x00000790, EDX=0x82f41070
+ESP=0x81bfe8d4, EBP=0x81bfe908, ESI=0x83609584, EDI=0x00001a20
+EIP=0xb7731e8f, CR2=0x8360b000, EFLAGS=0x00210206
+
+Top of Stack: (sp=0x81bfe8d4)
+0x81bfe8d4:   82cba4c0 b69886bc b6983c8b 82f41060
+0x81bfe8e4:   836095b2 00002200 b6984022 00000000
+0x81bfe8f4:   00000000 00002200 b69886bc 0000000b
+0x81bfe904:   827ecac8 81bfe928 b6983fbd 827ecac8
+0x81bfe914:   82be6b9c 00000001 b69886bc 81bfe96c
+0x81bfe924:   09828800 81bfe948 b697b1c6 827ecac8
+0x81bfe934:   0000000b 81bfe978 b3a0cb7a 09828918
+0x81bfe944:   ffffffff 81bfe978 b39e1270 09828918 
+
+Instructions: (pc=0xb7731e8f)
+0xb7731e7f:   0f 7f 5c 3a f0 72 30 66 0f 6f 54 38 10 83 e9 20
+0xb7731e8f:   66 0f 6f 5c 38 20 66 0f 6f cb 66 0f 3a 0f da 02 
+
+Stack: [0x81baf000,0x81c00000],  sp=0x81bfe8d4,  free space=13e81bfe250k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libc.so.6+0x114e8f]
+C  [libzip.so+0xbfbd]  ZIP_GetNextEntry+0x5d
+C  [libzip.so+0x31c6]  Java_java_util_zip_ZipFile_getNextEntry+0x26
+J  java.util.zip.ZipFile.getNextEntry(JI)J
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J  java.util.zip.ZipFile.getNextEntry(JI)J
+J  java.util.zip.ZipFile$2.nextElement()Ljava/lang/Object;
+J  org.eclipse.osgi.baseadaptor.bundlefile.ZipBundleFile.getEntryPaths(Ljava/lang/String;)Ljava/util/Enumeration;
+j  org.eclipse.osgi.baseadaptor.BaseData.getEntryPaths(Ljava/lang/String;)Ljava/util/Enumeration;+5
+j  org.eclipse.osgi.framework.internal.core.AbstractBundle.findLocalEntryPaths(Ljava/lang/String;Lorg/osgi/framework/Filter;Ljava/util/Hashtable;ZLjava/util/List;)V+5
+j  org.eclipse.osgi.framework.internal.core.AbstractBundle.findEntries(Ljava/lang/String;Ljava/lang/String;Z)Ljava/util/Enumeration;+117
+j  org.springframework.osgi.web.deployer.internal.util.Utils.unpackBundle(Lorg/osgi/framework/Bundle;Ljava/io/File;)V+5
+j  org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.unpackBundle(Lorg/osgi/framework/Bundle;Lorg/mortbay/jetty/webapp/WebAppContext;)Ljava/io/File;+104
+j  org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.getRootResource(Lorg/osgi/framework/Bundle;Lorg/mortbay/jetty/webapp/WebAppContext;)Lorg/mortbay/resource/Resource;+3
+j  org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.createJettyWebContext(Lorg/osgi/framework/Bundle;Ljava/lang/String;)Lorg/mortbay/jetty/webapp/WebAppContext;+42
+j  org.springframework.osgi.web.deployer.jetty.JettyWarDeployer.createDeployment(Lorg/osgi/framework/Bundle;Ljava/lang/String;)Lorg/springframework/osgi/web/deployer/WarDeployment;+3
+j  org.springframework.osgi.web.deployer.support.AbstractWarDeployer.deploy(Lorg/osgi/framework/Bundle;Ljava/lang/String;)Lorg/springframework/osgi/web/deployer/WarDeployment;+87
+j  org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$DeployTask.doRun()V+126
+j  org.springframework.osgi.web.extender.internal.activator.WarLoaderListener$DeploymentManager$BaseTask.run()V+51
+j  org.springframework.scheduling.timer.DelegatingTimerTask.run()V+4
+j  java.util.TimerThread.mainLoop()V+221
+j  java.util.TimerThread.run()V+1
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x81c3f000 JavaThread "Timer-3" daemon [_thread_blocked, id=13393, stack(0x813ad000,0x813fe000)]
+  0x81c3e800 JavaThread "taskExecutor-20" [_thread_blocked, id=13392, stack(0x81b5e000,0x81baf000)]
+  0x82af1800 JavaThread "taskExecutor-19" [_thread_blocked, id=13373, stack(0x813fe000,0x8144f000)]
+  0x09e93c00 JavaThread "taskExecutor-18" [_thread_blocked, id=13367, stack(0x8144f000,0x814a0000)]
+  0x09a6d800 JavaThread "taskExecutor-17" [_thread_blocked, id=13366, stack(0x814a0000,0x814f1000)]
+  0x09a6c800 JavaThread "taskExecutor-16" [_thread_blocked, id=13365, stack(0x814f1000,0x81542000)]
+  0x09d14400 JavaThread "taskExecutor-15" [_thread_blocked, id=13364, stack(0x81542000,0x81593000)]
+  0x09a54c00 JavaThread "taskExecutor-14" [_thread_blocked, id=13363, stack(0x81593000,0x815e4000)]
+  0x097e7000 JavaThread "DestroyJavaVM" [_thread_blocked, id=13259, stack(0xb6a07000,0xb6a58000)]
+  0x838d9c00 JavaThread "taskExecutor-13" [_thread_blocked, id=13362, stack(0x815f9000,0x8164a000)]
+  0x82be5800 JavaThread "taskExecutor-12" [_thread_blocked, id=13361, stack(0x8164a000,0x8169b000)]
+  0x82df6000 JavaThread "taskExecutor-11" [_thread_blocked, id=13360, stack(0x8169b000,0x816ec000)]
+  0x82df4400 JavaThread "taskExecutor-10" [_thread_blocked, id=13359, stack(0x816ec000,0x8173d000)]
+  0x82fd6c00 JavaThread "taskExecutor-9" [_thread_blocked, id=13358, stack(0x8173d000,0x8178e000)]
+  0x82af9000 JavaThread "taskExecutor-8" [_thread_blocked, id=13357, stack(0x8178e000,0x817df000)]
+  0x82af7400 JavaThread "taskExecutor-7" [_thread_blocked, id=13356, stack(0x817df000,0x81830000)]
+  0x83399400 JavaThread "taskExecutor-6" [_thread_blocked, id=13355, stack(0x81830000,0x81881000)]
+  0x82f6c400 JavaThread "taskExecutor-5" [_thread_blocked, id=13354, stack(0x81881000,0x818d2000)]
+  0x8387c800 JavaThread "taskExecutor-4" [_thread_blocked, id=13353, stack(0x818d2000,0x81923000)]
+  0x83899400 JavaThread "taskExecutor-3" [_thread_blocked, id=13352, stack(0x81923000,0x81974000)]
+  0x09e32000 JavaThread "taskExecutor-2" [_thread_blocked, id=13350, stack(0x81a1e000,0x81a6f000)]
+  0x09c3b000 JavaThread "taskExecutor-1" [_thread_blocked, id=13349, stack(0x81ab7000,0x81b08000)]
+=>0x09828800 JavaThread "Timer-2" daemon [_thread_in_native, id=13346, stack(0x81baf000,0x81c00000)]
+  0x09a58800 JavaThread "Timer-1" daemon [_thread_blocked, id=13345, stack(0x81b08000,0x81b59000)]
+  0x09c43800 JavaThread "btpool0-10 - Acceptor9 SelectChannelConnector@0.0.0.0:8073" [_thread_in_native, id=13344, stack(0x81f27000,0x81f78000)]
+  0x09c45000 JavaThread "btpool0-9 - Acceptor0 SelectChannelConnector@0.0.0.0:8073" [_thread_in_native, id=13343, stack(0x81f78000,0x81fc9000)]
+  0x09c44000 JavaThread "btpool0-8 - Acceptor4 SelectChannelConnector@0.0.0.0:8073" [_thread_in_native, id=13342, stack(0x81fc9000,0x8201a000)]
+  0x098ca400 JavaThread "btpool0-7 - Acceptor3 SelectChannelConnector@0.0.0.0:8073" [_thread_in_native, id=13341, stack(0x8201a000,0x8206b000)]
+  0x098c6c00 JavaThread "btpool0-6 - Acceptor2 SelectChannelConnector@0.0.0.0:8073" [_thread_in_native, id=13340, stack(0x8206b000,0x820bc000)]
+  0x09a47c00 JavaThread "btpool0-5 - Acceptor1 SelectChannelConnector@0.0.0.0:8073" [_thread_in_native, id=13339, stack(0x820bc000,0x8210d000)]
+  0x09a45c00 JavaThread "btpool0-4 - Acceptor8 SelectChannelConnector@0.0.0.0:8073" [_thread_in_native, id=13338, stack(0x8210d000,0x8215e000)]
+  0x09a43800 JavaThread "btpool0-3 - Acceptor7 SelectChannelConnector@0.0.0.0:8073" [_thread_in_native, id=13337, stack(0x8215e000,0x821af000)]
+  0x09a42400 JavaThread "btpool0-2 - Acceptor6 SelectChannelConnector@0.0.0.0:8073" [_thread_in_native, id=13336, stack(0x821af000,0x82200000)]
+  0x099d2400 JavaThread "btpool0-1 - Acceptor5 SelectChannelConnector@0.0.0.0:8073" [_thread_in_native, id=13335, stack(0x8250c000,0x8255d000)]
+  0x099d1c00 JavaThread "btpool0-0 - Acceptor0 SocketConnector@0.0.0.0:8072" [_thread_in_native, id=13334, stack(0x825d0000,0x82621000)]
+  0x09ecb400 JavaThread "Timer-0" daemon [_thread_blocked, id=13333, stack(0x82810000,0x82861000)]
+  0x099cb400 JavaThread "Jetty Start Thread" daemon [_thread_blocked, id=13332, stack(0x8360b000,0x8365c000)]
+  0x09a35400 JavaThread "State Saver" [_thread_blocked, id=13331, stack(0x82898000,0x828e9000)]
+  0x09fd6000 JavaThread "Bundle File Closer" daemon [_thread_blocked, id=13274, stack(0x8255d000,0x825ae000)]
+  0x09a65800 JavaThread "Start Level Event Dispatcher" daemon [_thread_blocked, id=13273, stack(0x8345e000,0x834af000)]
+  0x09a3e400 JavaThread "Framework Event Dispatcher" daemon [_thread_blocked, id=13272, stack(0x834af000,0x83500000)]
+  0x09a70800 JavaThread "OSGi Console" [_thread_in_native, id=13270, stack(0x8365c000,0x836ad000)]
+  0x0987e800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=13268, stack(0x8372e000,0x8377f000)]
+  0x0987cc00 JavaThread "CompilerThread1" daemon [_thread_in_native, id=13267, stack(0x8377f000,0x83800000)]
+  0x0987ac00 JavaThread "CompilerThread0" daemon [_thread_in_native, id=13266, stack(0x8394c000,0x839cd000)]
+  0x09879400 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=13265, stack(0x839cd000,0x83a1e000)]
+  0x09869800 JavaThread "Finalizer" daemon [_thread_blocked, id=13264, stack(0x83c1e000,0x83c6f000)]
+  0x09865000 JavaThread "Reference Handler" daemon [_thread_blocked, id=13263, stack(0x83c6f000,0x83cc0000)]
+
+Other Threads:
+  0x09862400 VMThread [stack: 0x83cc0000,0x83d41000] [id=13262]
+  0x09880400 WatcherThread [stack: 0x836ad000,0x8372e000] [id=13269]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ PSYoungGen      total 97664K, used 48106K [0xa8e10000, 0xb02e0000, 0xb38b0000)
+  eden space 97088K, 48% used [0xa8e10000,0xabc80ea0,0xaece0000)
+  from space 576K, 95% used [0xaffe0000,0xb0069bb8,0xb0070000)
+  to   space 2368K, 0% used [0xb0090000,0xb0090000,0xb02e0000)
+ PSOldGen        total 43712K, used 14242K [0x938b0000, 0x96360000, 0xa8e10000)
+  object space 43712K, 32% used [0x938b0000,0x94698b18,0x96360000)
+ PSPermGen       total 28928K, used 28850K [0x842b0000, 0x85ef0000, 0x938b0000)
+  object space 28928K, 99% used [0x842b0000,0x85edcbc0,0x85ef0000)
+
+Dynamic libraries:
+08048000-08052000 r-xp 00000000 08:01 25035540   /usr/lib/jvm/jdk1.6.0_21/bin/java
+08052000-08053000 rwxp 00009000 08:01 25035540   /usr/lib/jvm/jdk1.6.0_21/bin/java
+097e1000-0b3bc000 rwxp 00000000 00:00 0          [heap]
+80400000-804fb000 rwxp 00000000 00:00 0 
+804fb000-80500000 ---p 00000000 00:00 0 
+80500000-805fc000 rwxp 00000000 00:00 0 
+805fc000-80600000 ---p 00000000 00:00 0 
+80600000-806ff000 rwxp 00000000 00:00 0 
+806ff000-80700000 ---p 00000000 00:00 0 
+80700000-80800000 rwxp 00000000 00:00 0 
+80800000-808fa000 rwxp 00000000 00:00 0 
+808fa000-80900000 ---p 00000000 00:00 0 
+80900000-80a00000 rwxp 00000000 00:00 0 
+80a00000-80b00000 rwxp 00000000 00:00 0 
+80c00000-80cfb000 rwxp 00000000 00:00 0 
+80cfb000-80d00000 ---p 00000000 00:00 0 
+80e00000-80efd000 rwxp 00000000 00:00 0 
+80efd000-80f00000 ---p 00000000 00:00 0 
+80f00000-80ffa000 rwxp 00000000 00:00 0 
+80ffa000-81000000 ---p 00000000 00:00 0 
+81000000-810fe000 rwxp 00000000 00:00 0 
+810fe000-81100000 ---p 00000000 00:00 0 
+81100000-811fa000 rwxp 00000000 00:00 0 
+811fa000-81200000 ---p 00000000 00:00 0 
+81200000-812f9000 rwxp 00000000 00:00 0 
+812f9000-81300000 ---p 00000000 00:00 0 
+8131c000-813ad000 rwxp 00000000 00:00 0 
+813ad000-813b0000 ---p 00000000 00:00 0 
+813b0000-813fe000 rwxp 00000000 00:00 0 
+813fe000-81401000 ---p 00000000 00:00 0 
+81401000-8144f000 rwxp 00000000 00:00 0 
+8144f000-81452000 ---p 00000000 00:00 0 
+81452000-814a0000 rwxp 00000000 00:00 0 
+814a0000-814a3000 ---p 00000000 00:00 0 
+814a3000-814f1000 rwxp 00000000 00:00 0 
+814f1000-814f4000 ---p 00000000 00:00 0 
+814f4000-81542000 rwxp 00000000 00:00 0 
+81542000-81545000 ---p 00000000 00:00 0 
+81545000-81593000 rwxp 00000000 00:00 0 
+81593000-81596000 ---p 00000000 00:00 0 
+81596000-815e4000 rwxp 00000000 00:00 0 
+815e4000-815f9000 r-xs 00176000 08:01 15468467   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.apache.axis.jar
+815f9000-815fc000 ---p 00000000 00:00 0 
+815fc000-8164a000 rwxp 00000000 00:00 0 
+8164a000-8164d000 ---p 00000000 00:00 0 
+8164d000-8169b000 rwxp 00000000 00:00 0 
+8169b000-8169e000 ---p 00000000 00:00 0 
+8169e000-816ec000 rwxp 00000000 00:00 0 
+816ec000-816ef000 ---p 00000000 00:00 0 
+816ef000-8173d000 rwxp 00000000 00:00 0 
+8173d000-81740000 ---p 00000000 00:00 0 
+81740000-8178e000 rwxp 00000000 00:00 0 
+8178e000-81791000 ---p 00000000 00:00 0 
+81791000-817df000 rwxp 00000000 00:00 0 
+817df000-817e2000 ---p 00000000 00:00 0 
+817e2000-81830000 rwxp 00000000 00:00 0 
+81830000-81833000 ---p 00000000 00:00 0 
+81833000-81881000 rwxp 00000000 00:00 0 
+81881000-81884000 ---p 00000000 00:00 0 
+81884000-818d2000 rwxp 00000000 00:00 0 
+818d2000-818d5000 ---p 00000000 00:00 0 
+818d5000-81923000 rwxp 00000000 00:00 0 
+81923000-81926000 ---p 00000000 00:00 0 
+81926000-81974000 rwxp 00000000 00:00 0 
+81974000-81976000 r-xs 00000000 08:01 15468705   /home/hossam/project/okarabia-comments/bin/libs/varaza.extender-1.0.0.jar
+81976000-81979000 ---p 00000000 00:00 0 
+81979000-819c7000 rwxp 00000000 00:00 0 
+819c7000-819dc000 r-xs 0017c000 08:01 15469172   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.aspectj.weaver.jar
+81a1e000-81a21000 ---p 00000000 00:00 0 
+81a21000-81a6f000 rwxp 00000000 00:00 0 
+81a6f000-81ab7000 r-xs 0043c000 08:01 15468386   /home/hossam/project/okarabia-comments/bin/libs/com.pearlox.varaza.cxf.all.jar
+81ab7000-81aba000 ---p 00000000 00:00 0 
+81aba000-81b08000 rwxp 00000000 00:00 0 
+81b08000-81b0b000 ---p 00000000 00:00 0 
+81b0b000-81b59000 rwxp 00000000 00:00 0 
+81b5e000-81b61000 ---p 00000000 00:00 0 
+81b61000-81baf000 rwxp 00000000 00:00 0 
+81baf000-81bb2000 ---p 00000000 00:00 0 
+81bb2000-81c00000 rwxp 00000000 00:00 0 
+81c00000-81ce4000 rwxp 00000000 00:00 0 
+81ce4000-81d00000 ---p 00000000 00:00 0 
+81d00000-81dfd000 rwxp 00000000 00:00 0 
+81dfd000-81e00000 ---p 00000000 00:00 0 
+81e00000-81f00000 rwxp 00000000 00:00 0 
+81f0e000-81f17000 r-xs 00054000 08:01 15468632   /home/hossam/project/okarabia-comments/bin/libs/org.springframework.jdbc.jar
+81f27000-81f2a000 ---p 00000000 00:00 0 
+81f2a000-81f78000 rwxp 00000000 00:00 0 
+81f78000-81f7b000 ---p 00000000 00:00 0 
+81f7b000-81fc9000 rwxp 00000000 00:00 0 
+81fc9000-81fcc000 ---p 00000000 00:00 0 
+81fcc000-8201a000 rwxp 00000000 00:00 0 
+8201a000-8201d000 ---p 00000000 00:00 0 
+8201d000-8206b000 rwxp 00000000 00:00 0 
+8206b000-8206e000 ---p 00000000 00:00 0 
+8206e000-820bc000 rwxp 00000000 00:00 0 
+820bc000-820bf000 ---p 00000000 00:00 0 
+820bf000-8210d000 rwxp 00000000 00:00 0 
+8210d000-82110000 ---p 00000000 00:00 0 
+82110000-8215e000 rwxp 00000000 00:00 0 
+8215e000-82161000 ---p 00000000 00:00 0 
+82161000-821af000 rwxp 00000000 00:00 0 
+821af000-821b2000 ---p 00000000 00:00 0 
+821b2000-82200000 rwxp 00000000 00:00 0 
+82200000-822fb000 rwxp 00000000 00:00 0 
+822fb000-82300000 ---p 00000000 00:00 0 
+82300000-823ff000 rwxp 00000000 00:00 0 
+823ff000-82400000 ---p 00000000 00:00 0 
+82400000-824fb000 rwxp 00000000 00:00 0 
+824fb000-82500000 ---p 00000000 00:00 0 
+82500000-82507000 r-xs 00033000 08:01 15469179   /home/hossam/project/okarabia-comments/bin/libs/org.springframework.security.web.jar
+8250c000-8250f000 ---p 00000000 00:00 0 
+8250f000-8255d000 rwxp 00000000 00:00 0 
+8255d000-82560000 ---p 00000000 00:00 0 
+82560000-825ae000 rwxp 00000000 00:00 0 
+825c2000-825d0000 r-xs 00081000 08:01 15468477   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.apache.commons.collections.jar
+825d0000-825d3000 ---p 00000000 00:00 0 
+825d3000-82621000 rwxp 00000000 00:00 0 
+82627000-82635000 r-xs 000be000 08:01 15468525   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.apache.lucene.jar
+82635000-8263a000 r-xs 00041000 08:01 15468582   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.hibernate.annotations.jar
+8263a000-8265f000 r-xs 00231000 08:01 15468581   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.hibernate.jar
+8265f000-82667000 r-xs 0004a000 08:01 15468634   /home/hossam/project/okarabia-comments/bin/libs/org.springframework.orm.jar
+82667000-8266f000 r-xs 0005b000 08:01 15468638   /home/hossam/project/okarabia-comments/bin/libs/org.springframework.web.servlet.jar
+8266f000-82676000 r-xs 00032000 08:01 15468636   /home/hossam/project/okarabia-comments/bin/libs/org.springframework.transaction.jar
+82676000-8267e000 r-xs 00115000 08:01 25039136   /usr/lib/jvm/jdk1.6.0_21/jre/lib/resources.jar
+8267e000-82687000 r-xs 00046000 08:01 15468625   /home/hossam/project/okarabia-comments/bin/libs/org.springframework.aop.jar
+82688000-82692000 r-xs 00042000 08:01 15468667   /home/hossam/project/okarabia-comments/bin/libs/org.springframework.security.core.jar
+8269e000-826a5000 r-xs 00047000 08:01 15468594   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.hibernate.search.jar
+826a5000-826ae000 r-xs 00056000 08:01 15468637   /home/hossam/project/okarabia-comments/bin/libs/org.springframework.web.jar
+826ae000-826bd000 r-xs 00077000 08:01 15469109   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.joda.time.jar
+826bd000-826c1000 r-xs 0004b000 08:01 15468555   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.apache.ws.security.jar
+826c2000-826c8000 r-xs 00092000 08:01 25039127   /usr/lib/jvm/jdk1.6.0_21/jre/lib/jsse.jar
+826c8000-826d0000 r-xs 0005a000 08:01 15468654   /home/hossam/project/okarabia-comments/bin/libs/log4j.osgi.jar
+826d0000-826db000 r-xs 00073000 08:01 15468508   /home/hossam/project/okarabia-comments/bin/libs/org.osgi.compendium.jar
+826db000-826ec000 r-xs 00091000 08:01 15468628   /home/hossam/project/okarabia-comments/bin/libs/org.springframework.context.jar
+826ec000-826f2000 r-xs 00032000 08:01 15468595   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.hibernate.validator.jar
+826fc000-82700000 r-xs 00020000 08:01 19269258   /home/hossam/project/okarabia-comments/bin/libs/configuration/org.eclipse.osgi/bundles/76/1/.cp/XmlSchema-1.4.5.jar
+82700000-827ee000 rwxp 00000000 00:00 0 
+827ee000-82800000 ---p 00000000 00:00 0 
+82802000-82805000 r-xs 0000e000 08:01 15468583   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.hibernate.annotations.common.jar
+82805000-82808000 r-xs 0001b000 08:01 15468590   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.hibernate.ejb.jar
+82808000-8280a000 r-xs 00007000 08:01 15468423   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.javax.ejb.jar
+8280a000-8280d000 r-xs 00013000 08:01 15468485   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.apache.commons.pool.jar
+8280d000-82810000 r-xs 00009000 08:01 15468439   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.javax.ws.rs.jar
+82810000-82813000 ---p 00000000 00:00 0 
+82813000-82861000 rwxp 00000000 00:00 0 
+82863000-82869000 r-xs 0004a000 08:01 15468453   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.net.sf.cglib.jar
+82869000-82872000 r-xs 00051000 08:01 15468630   /home/hossam/project/okarabia-comments/bin/libs/org.springframework.core.jar
+82872000-8287c000 r-xs 0004f000 08:01 15468660   /home/hossam/project/okarabia-comments/bin/libs/spring-osgi-core.jar
+8287c000-82888000 r-xs 0007c000 08:01 15468627   /home/hossam/project/okarabia-comments/bin/libs/org.springframework.beans.jar
+82888000-8288b000 r-xs 0000e000 08:01 19269012   /home/hossam/project/okarabia-comments/bin/libs/configuration/org.eclipse.osgi/bundles/76/1/.cp/neethi-2.0.2.jar
+8288c000-8288f000 r-xs 00012000 08:01 15468433   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.javax.servlet.jsp.jar
+8288f000-82892000 r-xs 0000b000 08:01 15468430   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.javax.persistence.jar
+82892000-82896000 r-xs 0001a000 08:01 15468355   /home/hossam/project/okarabia-comments/bin/libs/spring-osgi-extender.jar
+82898000-8289b000 ---p 00000000 00:00 0 
+8289b000-828e9000 rwxp 00000000 00:00 0 
+828e9000-828eb000 r-xs 0001c000 08:01 15468478   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.apache.commons.dbcp.jar
+828eb000-828ee000 r-xs 0000f000 08:01 15468664   /home/hossam/project/okarabia-comments/bin/libs/spring-osgi-web.jar
+828ee000-828f7000 r-xs 0004f000 08:01 15468520   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.apache.httpcomponents.httpclient.jar
+828f7000-828fc000 r-xs 00028000 08:01 15468521   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.apache.httpcomponents.httpcore.jar
+828fc000-82900000 r-xs 00024000 08:01 15468610   /home/hossam/project/okarabia-comments/bin/libs/jetty-util.jar
+82900000-829e4000 rwxp 00000000 00:00 0 
+829e4000-82a00000 ---p 00000000 00:00 0 
+82a00000-82afa000 rwxp 00000000 00:00 0 
+82afa000-82b00000 ---p 00000000 00:00 0 
+82b00000-82be7000 rwxp 00000000 00:00 0 
+82be7000-82c00000 ---p 00000000 00:00 0 
+82c00000-82cf2000 rwxp 00000000 00:00 0 
+82cf2000-82d00000 ---p 00000000 00:00 0 
+82d00000-82df8000 rwxp 00000000 00:00 0 
+82df8000-82e00000 ---p 00000000 00:00 0 
+82e00000-82efc000 rwxp 00000000 00:00 0 
+82efc000-82f00000 ---p 00000000 00:00 0 
+82f00000-82ffb000 rwxp 00000000 00:00 0 
+82ffb000-83000000 ---p 00000000 00:00 0 
+83000000-830fe000 rwxp 00000000 00:00 0 
+830fe000-83100000 ---p 00000000 00:00 0 
+83100000-831fd000 rwxp 00000000 00:00 0 
+831fd000-83200000 ---p 00000000 00:00 0 
+83200000-832ff000 rwxp 00000000 00:00 0 
+832ff000-83300000 ---p 00000000 00:00 0 
+83300000-83400000 rwxp 00000000 00:00 0 
+83400000-83401000 r-xs 00002000 08:01 15468390   /home/hossam/project/okarabia-comments/bin/libs/com.siliconnile.security.dto.jar
+83401000-83403000 r-xs 00005000 08:01 15468670   /home/hossam/project/okarabia-comments/bin/libs/spring-security-crypto.jar
+83403000-8340c000 r-xs 00047000 08:01 15468575   /home/hossam/project/okarabia-comments/bin/libs/spring-security-oauth.jar
+8340c000-8340e000 r-xs 00008000 08:01 15468618   /home/hossam/project/okarabia-comments/bin/libs/scribe.jar
+8340e000-8340f000 r-xs 00001000 08:01 15468674   /home/hossam/project/okarabia-comments/bin/libs/spring-social-linkedin.jar
+8340f000-83410000 r-xs 0000c000 08:01 15468626   /home/hossam/project/okarabia-comments/bin/libs/org.springframework.asm.jar
+83410000-83412000 r-xs 00002000 08:01 15468676   /home/hossam/project/okarabia-comments/bin/libs/spring-social-web.jar
+83412000-83413000 r-xs 00003000 08:01 15468673   /home/hossam/project/okarabia-comments/bin/libs/spring-social-facebook.jar
+83413000-83415000 r-xs 00004000 08:01 15468675   /home/hossam/project/okarabia-comments/bin/libs/spring-social-twitter.jar
+83415000-83418000 r-xs 00009000 08:01 15468672   /home/hossam/project/okarabia-comments/bin/libs/spring-social-core.jar
+83418000-8341a000 r-xs 00008000 08:01 15468578   /home/hossam/project/okarabia-comments/bin/libs/event.jar
+8341a000-8341b000 r-xs 00000000 08:01 15468425   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.javax.inject.jar
+8341b000-8341c000 r-xs 00001000 08:01 15469261   /home/hossam/project/okarabia-comments/bin/libs/com.siliconarabia.okarabiacomments.converter-1.0.0.jar
+8341f000-83420000 r-xs 00001000 08:01 15469426   /home/hossam/project/okarabia-comments/bin/libs/com.siliconarabia.okarabiacomments.ws.comment-impl-1.0.0.jar
+83420000-83422000 r-xs 00000000 08:01 15469296   /home/hossam/project/okarabia-comments/bin/libs/com.siliconarabia.okarabiacomments.ws.comment-api-1.0.0.jar
+83423000-8342b000 r-xs 0008b000 08:01 15468603   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.javassist.jar
+8342b000-8342c000 r-xs 00001000 08:01 15469420   /home/hossam/project/okarabia-comments/bin/libs/com.siliconarabia.okarabiacomments.comment.service-1.0.0.jar
+8342c000-8342d000 r-xs 00001000 08:01 15469387   /home/hossam/project/okarabia-comments/bin/libs/com.siliconarabia.okarabiacomments.user.service-1.0.0.jar
+8342d000-8342e000 r-xs 00001000 08:01 15469424   /home/hossam/project/okarabia-comments/bin/libs/com.siliconarabia.okarabiacomments.ws.user-impl-1.0.0.jar
+8342e000-83430000 r-xs 00001000 08:01 15469135   /home/hossam/project/okarabia-comments/bin/libs/com.siliconarabia.okarabiacomments.dto-1.0.0.jar
+83430000-83432000 r-xs 00001000 08:01 15469182   /home/hossam/project/okarabia-comments/bin/libs/com.siliconarabia.okarabiacomments.domain-1.0.0.jar
+83432000-83434000 r-xs 00001000 08:01 15469225   /home/hossam/project/okarabia-comments/bin/libs/com.siliconarabia.okarabiacomments.dao-impl-1.0.0.jar
+83434000-83435000 r-xs 00001000 08:01 15469183   /home/hossam/project/okarabia-comments/bin/libs/com.siliconarabia.okarabiacomments.dao-1.0.0.jar
+83435000-83436000 r-xs 00001000 08:01 15469181   /home/hossam/project/okarabia-comments/bin/libs/com.siliconarabia.okarabiacomments.web.bundle-1.0.0.jar
+83436000-83438000 r-xs 00002000 08:01 15469385   /home/hossam/project/okarabia-comments/bin/libs/okarabia-fragment-1.0.0.jar
+83438000-8343e000 r-xs 00074000 08:01 15468609   /home/hossam/project/okarabia-comments/bin/libs/jetty.jar
+8343e000-8343f000 r-xs 00000000 08:01 15468391   /home/hossam/project/okarabia-comments/bin/libs/com.siliconnile.security.ws.user.api.jar
+8343f000-83441000 r-xs 00007000 08:01 15469384   /home/hossam/project/okarabia-comments/bin/libs/index-fragment-1.0.0.jar
+83441000-83443000 r-xs 00014000 08:01 15468432   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.javax.servlet.jar
+83443000-8344b000 r-xs 00057000 08:01 15469108   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.codehaus.jackson.mapper.jar
+8344b000-8344e000 r-xs 00022000 08:01 15469107   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.codehaus.jackson.jar
+8344e000-83454000 r-xs 0004b000 08:01 15469169   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.apache.myfaces.javax.faces.jar
+83454000-83458000 r-xs 00021000 08:01 15468441   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.javax.wsdl.jar
+83458000-8345e000 r-xs 0006f000 08:01 15468616   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.postgresql.jdbc4.jar
+8345e000-83461000 ---p 00000000 00:00 0 
+83461000-834af000 rwxp 00000000 00:00 0 
+834af000-834b2000 ---p 00000000 00:00 0 
+834b2000-83500000 rwxp 00000000 00:00 0 
+83500000-835fb000 rwxp 00000000 00:00 0 
+835fb000-83600000 ---p 00000000 00:00 0 
+83602000-83603000 r-xs 00000000 08:01 15469152   /home/hossam/project/okarabia-comments/bin/libs/com.siliconarabia.okarabiacomments.ws.user-api-1.0.0.jar
+83603000-83605000 r-xs 00009000 08:01 15468665   /home/hossam/project/okarabia-comments/bin/libs/spring-osgi-web-extender.jar
+83605000-83609000 r-xs 0002f000 08:01 15468398   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.com.sun.syndication.jar
+83609000-8360a000 r-xs 00008000 08:01 15469111   /home/hossam/project/okarabia-comments/bin/libs/okarabiacomments-web-1.0.0.war
+8360a000-8360b000 r-xs 00001000 08:01 15468685   /home/hossam/project/okarabia-comments/bin/libs/okarabiacomments-ws-web-1.0.0.war
+8360b000-8360e000 ---p 00000000 00:00 0 
+8360e000-8365c000 rwxp 00000000 00:00 0 
+8365c000-8365f000 ---p 00000000 00:00 0 
+8365f000-836ad000 rwxp 00000000 00:00 0 
+836ad000-836ae000 ---p 00000000 00:00 0 
+836ae000-8372e000 rwxp 00000000 00:00 0 
+8372e000-83731000 ---p 00000000 00:00 0 
+83731000-8377f000 rwxp 00000000 00:00 0 
+8377f000-83782000 ---p 00000000 00:00 0 
+83782000-83800000 rwxp 00000000 00:00 0 
+83800000-838e9000 rwxp 00000000 00:00 0 
+838e9000-83900000 ---p 00000000 00:00 0 
+83900000-83901000 r-xs 00002000 08:01 15468349   /home/hossam/project/okarabia-comments/bin/libs/com.omlulu.recaptcha4j.jar
+83902000-83903000 r-xs 00005000 08:01 15468657   /home/hossam/project/okarabia-comments/bin/libs/org.springframework.osgi.extensions.annotation.jar
+83903000-83904000 r-xs 00008000 08:01 15468661   /home/hossam/project/okarabia-comments/bin/libs/spring-osgi-io.jar
+83904000-83905000 r-xs 00006000 08:01 15468612   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.objectweb.asm.jar
+83905000-83907000 r-xs 00001000 08:01 25039245   /usr/lib/jvm/jdk1.6.0_21/jre/lib/ext/dnsns.jar
+83907000-83908000 r-xs 00000000 08:01 15468652   /home/hossam/project/okarabia-comments/bin/libs/jetty.web.extender.fragment.osgi.jar
+83908000-8390b000 r-xs 000cb000 08:01 25039246   /usr/lib/jvm/jdk1.6.0_21/jre/lib/ext/localedata.jar
+8390b000-8390c000 r-xs 00003000 08:01 15468436   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.javax.transaction.jar
+8390c000-8390e000 r-xs 00002000 08:01 15469158   /home/hossam/project/okarabia-comments/bin/libs/com.pearlox.web.facebook.spring.security.jar
+8390e000-83911000 r-xs 00009000 08:01 15468438   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.javax.validation.jar
+83911000-83916000 r-xs 00048000 08:01 15468577   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.dom4j.jar
+83916000-83918000 r-xs 00005000 08:01 15468351   /home/hossam/project/okarabia-comments/bin/libs/com.pearlox.framework.jar
+83918000-8392b000 r-xp 00000000 08:01 25039297   /usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/libnet.so
+8392b000-8392c000 rwxp 00013000 08:01 25039297   /usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/libnet.so
+8392c000-8393c000 r-xs 00102000 08:01 15468579   /home/hossam/project/okarabia-comments/bin/libs/org.eclipse.osgi.jar
+8393c000-8394c000 r-xs 00102000 08:01 15468579   /home/hossam/project/okarabia-comments/bin/libs/org.eclipse.osgi.jar
+8394c000-8394f000 ---p 00000000 00:00 0 
+8394f000-839cd000 rwxp 00000000 00:00 0 
+839cd000-839d0000 ---p 00000000 00:00 0 
+839d0000-83a1e000 rwxp 00000000 00:00 0 
+83a1e000-83c1e000 r-xp 00000000 08:01 24255768   /usr/lib/locale/locale-archive
+83c1e000-83c21000 ---p 00000000 00:00 0 
+83c21000-83c6f000 rwxp 00000000 00:00 0 
+83c6f000-83c72000 ---p 00000000 00:00 0 
+83c72000-83cc0000 rwxp 00000000 00:00 0 
+83cc0000-83cc1000 ---p 00000000 00:00 0 
+83cc1000-83d75000 rwxp 00000000 00:00 0 
+83d75000-83f0c000 r-xs 03014000 08:01 25039137   /usr/lib/jvm/jdk1.6.0_21/jre/lib/rt.jar
+83f0c000-83f0d000 ---p 00000000 00:00 0 
+83f0d000-83f8d000 rwxp 00000000 00:00 0 
+83f8d000-83f8e000 ---p 00000000 00:00 0 
+83f8e000-8401d000 rwxp 00000000 00:00 0 
+8401d000-84089000 rwxp 00000000 00:00 0 
+84089000-8409f000 rwxp 00000000 00:00 0 
+8409f000-84134000 rwxp 00000000 00:00 0 
+84134000-84143000 rwxp 00000000 00:00 0 
+84143000-841af000 rwxp 00000000 00:00 0 
+841af000-841c5000 rwxp 00000000 00:00 0 
+841c5000-84259000 rwxp 00000000 00:00 0 
+84259000-84295000 rwxp 00000000 00:00 0 
+84295000-842af000 ---p 00000000 00:00 0 
+842af000-85ef0000 rwxp 00000000 00:00 0 
+85ef0000-938b0000 rwxp 00000000 00:00 0 
+938b0000-96360000 rwxp 00000000 00:00 0 
+96360000-a8e10000 rwxp 00000000 00:00 0 
+a8e10000-b02e0000 rwxp 00000000 00:00 0 
+b02e0000-b38b0000 ---p 00000000 00:00 0 
+b38b0000-b38b3000 r-xs 00023000 08:01 15468606   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.jdom.jar
+b38b3000-b38b5000 r-xs 00028000 08:01 15468666   /home/hossam/project/okarabia-comments/bin/libs/org.springframework.security.config.jar
+b38b5000-b38b7000 r-xs 00006000 08:01 15468352   /home/hossam/project/okarabia-comments/bin/libs/com.pearlox.varaza.jar
+b38b7000-b38b8000 r-xs 00000000 08:01 15468706   /home/hossam/project/okarabia-comments/bin/libs/com.siliconarabia.okarabiacomments.settings-1.0.0.jar
+b38b8000-b38c1000 rwxp 00000000 00:00 0 
+b38c1000-b3978000 rwxp 00000000 00:00 0 
+b3978000-b3bb8000 rwxp 00000000 00:00 0 
+b3bb8000-b6978000 rwxp 00000000 00:00 0 
+b6978000-b6987000 r-xp 00000000 08:01 25039306   /usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/libzip.so
+b6987000-b6989000 rwxp 0000e000 08:01 25039306   /usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/libzip.so
+b6989000-b6993000 r-xp 00000000 08:01 15074338   /lib/i386-linux-gnu/libnss_files-2.13.so
+b6993000-b6994000 r-xp 00009000 08:01 15074338   /lib/i386-linux-gnu/libnss_files-2.13.so
+b6994000-b6995000 rwxp 0000a000 08:01 15074338   /lib/i386-linux-gnu/libnss_files-2.13.so
+b6995000-b699e000 r-xp 00000000 08:01 15074342   /lib/i386-linux-gnu/libnss_nis-2.13.so
+b699e000-b699f000 r-xp 00008000 08:01 15074342   /lib/i386-linux-gnu/libnss_nis-2.13.so
+b699f000-b69a0000 rwxp 00009000 08:01 15074342   /lib/i386-linux-gnu/libnss_nis-2.13.so
+b69a0000-b69a1000 r-xs 00002000 08:01 15469157   /home/hossam/project/okarabia-comments/bin/libs/com.pearlox.facebook-communicator.jar
+b69a1000-b69a8000 r-xp 00000000 08:01 25039298   /usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/libnio.so
+b69a8000-b69a9000 rwxp 00006000 08:01 25039298   /usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/libnio.so
+b69a9000-b69b1000 rwxs 00000000 08:01 15209538   /tmp/hsperfdata_hossam/13258
+b69b1000-b69c4000 r-xp 00000000 08:01 15074332   /lib/i386-linux-gnu/libnsl-2.13.so
+b69c4000-b69c5000 r-xp 00012000 08:01 15074332   /lib/i386-linux-gnu/libnsl-2.13.so
+b69c5000-b69c6000 rwxp 00013000 08:01 15074332   /lib/i386-linux-gnu/libnsl-2.13.so
+b69c6000-b69c8000 rwxp 00000000 00:00 0 
+b69c8000-b69c9000 r-xs 00002000 08:01 15468389   /home/hossam/project/okarabia-comments/bin/libs/com.siliconnile.security.client.jar
+b69c9000-b69ca000 r-xs 00002000 08:01 15469386   /home/hossam/project/okarabia-comments/bin/libs/football-fragment-1.0.0.jar
+b69ca000-b69d0000 r-xp 00000000 08:01 15074334   /lib/i386-linux-gnu/libnss_compat-2.13.so
+b69d0000-b69d1000 r-xp 00005000 08:01 15074334   /lib/i386-linux-gnu/libnss_compat-2.13.so
+b69d1000-b69d2000 rwxp 00006000 08:01 15074334   /lib/i386-linux-gnu/libnss_compat-2.13.so
+b69d2000-b69d8000 r-xp 00000000 08:01 25039314   /usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/native_threads/libhpi.so
+b69d8000-b69d9000 rwxp 00006000 08:01 25039314   /usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/native_threads/libhpi.so
+b69d9000-b69fc000 r-xp 00000000 08:01 25039282   /usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/libjava.so
+b69fc000-b69fe000 rwxp 00023000 08:01 25039282   /usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/libjava.so
+b69fe000-b6a05000 r-xp 00000000 08:01 15074361   /lib/i386-linux-gnu/librt-2.13.so
+b6a05000-b6a06000 r-xp 00006000 08:01 15074361   /lib/i386-linux-gnu/librt-2.13.so
+b6a06000-b6a07000 rwxp 00007000 08:01 15074361   /lib/i386-linux-gnu/librt-2.13.so
+b6a07000-b6a0a000 ---p 00000000 00:00 0 
+b6a0a000-b6a58000 rwxp 00000000 00:00 0 
+b6a58000-b6a7c000 r-xp 00000000 08:01 15074329   /lib/i386-linux-gnu/libm-2.13.so
+b6a7c000-b6a7d000 r-xp 00023000 08:01 15074329   /lib/i386-linux-gnu/libm-2.13.so
+b6a7d000-b6a7e000 rwxp 00024000 08:01 15074329   /lib/i386-linux-gnu/libm-2.13.so
+b6a7e000-b71aa000 r-xp 00000000 08:01 25039317   /usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/server/libjvm.so
+b71aa000-b71fd000 rwxp 0072c000 08:01 25039317   /usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/server/libjvm.so
+b71fd000-b761d000 rwxp 00000000 00:00 0 
+b761d000-b7777000 r-xp 00000000 08:01 15074292   /lib/i386-linux-gnu/libc-2.13.so
+b7777000-b7778000 ---p 0015a000 08:01 15074292   /lib/i386-linux-gnu/libc-2.13.so
+b7778000-b777a000 r-xp 0015a000 08:01 15074292   /lib/i386-linux-gnu/libc-2.13.so
+b777a000-b777b000 rwxp 0015c000 08:01 15074292   /lib/i386-linux-gnu/libc-2.13.so
+b777b000-b777e000 rwxp 00000000 00:00 0 
+b777e000-b7780000 r-xp 00000000 08:01 15074302   /lib/i386-linux-gnu/libdl-2.13.so
+b7780000-b7781000 r-xp 00001000 08:01 15074302   /lib/i386-linux-gnu/libdl-2.13.so
+b7781000-b7782000 rwxp 00002000 08:01 15074302   /lib/i386-linux-gnu/libdl-2.13.so
+b7782000-b7789000 r-xp 00000000 08:01 25039312   /usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/jli/libjli.so
+b7789000-b778b000 rwxp 00006000 08:01 25039312   /usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/jli/libjli.so
+b778b000-b778c000 rwxp 00000000 00:00 0 
+b778c000-b77a1000 r-xp 00000000 08:01 15074357   /lib/i386-linux-gnu/libpthread-2.13.so
+b77a1000-b77a2000 r-xp 00015000 08:01 15074357   /lib/i386-linux-gnu/libpthread-2.13.so
+b77a2000-b77a3000 rwxp 00016000 08:01 15074357   /lib/i386-linux-gnu/libpthread-2.13.so
+b77a3000-b77a5000 rwxp 00000000 00:00 0 
+b77a5000-b77a7000 r-xs 00013000 08:01 15468565   /home/hossam/project/okarabia-comments/bin/libs/com.springsource.org.apache.xml.resolver.jar
+b77a7000-b77a8000 r-xp 002a1000 08:01 24255768   /usr/lib/locale/locale-archive
+b77a8000-b77a9000 rwxp 00000000 00:00 0 
+b77a9000-b77aa000 r-xp 00000000 00:00 0 
+b77aa000-b77b5000 r-xp 00000000 08:01 25039305   /usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/libverify.so
+b77b5000-b77b6000 rwxp 0000b000 08:01 25039305   /usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/libverify.so
+b77b6000-b77b8000 rwxp 00000000 00:00 0 
+b77b8000-b77b9000 r-xp 00000000 00:00 0          [vdso]
+b77b9000-b77d5000 r-xp 00000000 08:01 15074279   /lib/i386-linux-gnu/ld-2.13.so
+b77d5000-b77d6000 r-xp 0001b000 08:01 15074279   /lib/i386-linux-gnu/ld-2.13.so
+b77d6000-b77d7000 rwxp 0001c000 08:01 15074279   /lib/i386-linux-gnu/ld-2.13.so
+bffb8000-bffd9000 rwxp 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: -Xmx512m -XX:MaxPermSize=246m 
+java_command: bin/libs/org.eclipse.osgi.jar
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/lib/jvm/jdk1.6.0_21
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/lib/mvn/bin:/usr/lib/jvm/jdk1.6.0_21/bin:/usr/lib/mvn/bin:/usr/lib/jvm/jdk1.6.0_21/bin
+USERNAME=hossam
+LD_LIBRARY_PATH=/usr/lib/jvm/jdk1.6.0_21/jre/lib/i386/server:/usr/lib/jvm/jdk1.6.0_21/jre/lib/i386:/usr/lib/jvm/jdk1.6.0_21/jre/../lib/i386
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x6a9eb0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x6a9eb0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x578180], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x578180], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x578180], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x578180], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x57adc0], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: [libjvm.so+0x57aaf0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGINT: [libjvm.so+0x57aaf0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x57aaf0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x57aaf0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:squeeze/sid
+
+uname:Linux 2.6.38-13-generic-pae #53-Ubuntu SMP Mon Nov 28 19:41:58 UTC 2011 i686
+libc:glibc 2.13 NPTL 2.13 
+rlimit: STACK 8192k, CORE 0k, NPROC infinity, NOFILE 4096, AS infinity
+load average:3.34 1.45 0.84
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 15 stepping 11, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3
+
+Memory: 4k page, physical 8222380k(3172836k free), swap 8350716k(8350716k free)
+
+vm_info: Java HotSpot(TM) Server VM (17.0-b16) for linux-x86 JRE (1.6.0_21-b06), built on Jun 22 2010 01:04:46 by "java_re" with gcc 3.2.1-7a (J2SE release)
+
+time: Thu Dec 29 13:48:00 2011
+elapsed time: 57 seconds
+
